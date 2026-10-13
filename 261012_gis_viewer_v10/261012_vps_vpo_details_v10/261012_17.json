@@ -1,0 +1,74 @@
+{
+  "75921": {
+    "featureId": 75921,
+    "areaKey": "vps-vpo-change6:261012:75921",
+    "entityId": 96120023,
+    "type": "",
+    "identifier": "",
+    "areaNumber": "1178",
+    "label": "",
+    "description": "K56",
+    "sourceSection": "G) Veřejně prospěšné stavby a opatření",
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?"
+  },
+  "75985": {
+    "featureId": 75985,
+    "areaKey": "vps-vpo-change6:261012:75985",
+    "entityId": 96120023,
+    "type": "",
+    "identifier": "",
+    "areaNumber": "20",
+    "label": "",
+    "description": "Z(ZÚR)_Z01",
+    "sourceSection": "G) Veřejně prospěšné stavby a opatření",
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?"
+  },
+  "76049": {
+    "featureId": 76049,
+    "areaKey": "vps-vpo-change6:261012:76049",
+    "entityId": 96120023,
+    "type": "",
+    "identifier": "",
+    "areaNumber": "561",
+    "label": "",
+    "description": "T1",
+    "sourceSection": "G) Veřejně prospěšné stavby a opatření",
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?"
+  },
+  "76113": {
+    "featureId": 76113,
+    "areaKey": "vps-vpo-change6:261012:76113",
+    "entityId": 96120023,
+    "type": "",
+    "identifier": "",
+    "areaNumber": "993",
+    "label": "",
+    "description": "R49_(ZÚR)_PK01",
+    "sourceSection": "G) Veřejně prospěšné stavby a opatření",
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?"
+  },
+  "76177": {
+    "featureId": 76177,
+    "areaKey": "vps-vpo-change6:261012:76177",
+    "entityId": 96121023,
+    "type": "",
+    "identifier": "",
+    "areaNumber": "",
+    "label": "",
+    "description": "",
+    "sourceSection": "G) Veřejně prospěšné stavby a opatření",
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?"
+  },
+  "76369": {
+    "featureId": 76369,
+    "areaKey": "vps-vpo-change6:261012:76369",
+    "entityId": 96140023,
+    "type": "",
+    "identifier": "",
+    "areaNumber": "1096",
+    "label": "",
+    "description": "RBK3_(ZÚR)",
+    "sourceSection": "G) Veřejně prospěšné stavby a opatření",
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?"
+  }
+}

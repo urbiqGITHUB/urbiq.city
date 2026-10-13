@@ -1,0 +1,31 @@
+{
+  "3": {
+    "name": "Regenerace veřejných prostranství na sídlišti Obeciny",
+    "projectNumber": "3",
+    "year": "2022",
+    "status": "Projekt zrealizován",
+    "kamRole": "Spoluautor projektu, projektový management",
+    "projectType": "Studie",
+    "description": "Studie navrhovala komplexní obnovu sídliště. Zahrnovala řešení dopravy, obnovu hřišť, sportovišť a zeleně. Zabývala se také veřejnými prostory v okolí obchodního centra a návrhem nového mobiliáře v celé oblasti.",
+    "attachments": [
+      {
+        "label": "03_Obeciny_01.jpg",
+        "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/Projekty_KAM/FeatureServer/0/3/attachments/5"
+      },
+      {
+        "label": "03_Obeciny_02.jpg",
+        "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/Projekty_KAM/FeatureServer/0/3/attachments/6"
+      },
+      {
+        "label": "03_Obeciny_03.jpg",
+        "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/Projekty_KAM/FeatureServer/0/3/attachments/7"
+      },
+      {
+        "label": "03_Obeciny_04.jpg",
+        "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/Projekty_KAM/FeatureServer/0/3/attachments/8"
+      }
+    ],
+    "sourceFeatureId": "3",
+    "featureId": 3
+  }
+}

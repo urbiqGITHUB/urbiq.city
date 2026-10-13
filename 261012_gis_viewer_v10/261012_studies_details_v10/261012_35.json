@@ -1,0 +1,33 @@
+{
+  "2595": {
+    "areaNumber": "78",
+    "fpId": "298_78",
+    "featureId": 2595,
+    "entityId": "90530023",
+    "areaKey": "urban-studies:261012:2595",
+    "cadastralArea": "Louky nad Dřevnicí",
+    "functionCode": "HU",
+    "functionName": "Smíšené výrobní všeobecné - HU",
+    "areaStatus": "2",
+    "designationType": "PLOCHY ZASTAVITELNÉ",
+    "location": "Louky – západ",
+    "useMethod": "využití území pro smíšenou funkci",
+    "mainUse": "průmyslová výroba a skladování",
+    "permittedUse": "pozemky staveb pro komerční zařízení\npozemky související dopravní a technické infrastruktury\npozemky veřejných prostranství\npozemky sídelní zeleně\nstávající výroba betonové směsi, malt, cementu, vápna, sádry a výrobků z nich, koksu, zpracování rudy, nerostů, výroba základních chemických látek, hnojiv, dusíkatých sloučenin, plastů a syntetického kaučuku v primárních formách, šrotoviště v nezměněném objemu",
+    "conditionallyPermittedUse": "pozemky výzkumných zařízení za podmínky, že provoz stávající výroby nebude negativně ovlivňovat tato zařízení",
+    "prohibitedUse": "výroba betonové směsi, malt, cementu, vápna, sádry a výrobků z nich, koksu, zpracování rudy, nerostů, výroba základních chemických látek, hnojiv, dusíkatých sloučenin, plastů a syntetického kaučuku v primárních formách, šrotoviště\npozemky staveb komerčních zařízení - nákupních center\npozemky staveb komerčních zařízení - obchodních domů",
+    "additionalConditions": "zpracování územní studie je nezbytnou podmínkou pro rozhodovánínutnou podmínkou je vybudování kapacitní silnice  nutnou podmínkou je řešení protipovodňové ochrany řešit přeložky nadzemního vedení vn, VTL plynovoduneumisťovat pozemky pro sklady o výměře nad 3500 m2",
+    "transformationCode": "",
+    "studyCode": "US2",
+    "sourceSection": "I) Plochy podmíněné zpracováním územní studie",
+    "sourcePage": 101,
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?#page=101",
+    "regulationAvailable": "Ano",
+    "heightLimits": [],
+    "greenCoefficient": "",
+    "oneHouseCondition": "",
+    "derivedNote": "",
+    "studyType": "Územní studie jako podmínka rozhodování",
+    "studyConditions": "stanovit podrobnější podmínky prostorového uspořádání včetně umístění zeleně, řešit dopravní obsluhu a napojení technickou infrastrukturou"
+  }
+}

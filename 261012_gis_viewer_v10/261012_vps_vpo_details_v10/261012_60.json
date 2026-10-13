@@ -1,0 +1,50 @@
+{
+  "75900": {
+    "featureId": 75900,
+    "areaKey": "vps-vpo-change6:261012:75900",
+    "entityId": 96120023,
+    "type": "",
+    "identifier": "",
+    "areaNumber": "108",
+    "label": "",
+    "description": "Z(ZÚR)_Z01",
+    "sourceSection": "G) Veřejně prospěšné stavby a opatření",
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?"
+  },
+  "75964": {
+    "featureId": 75964,
+    "areaKey": "vps-vpo-change6:261012:75964",
+    "entityId": 96120023,
+    "type": "",
+    "identifier": "",
+    "areaNumber": "162",
+    "label": "",
+    "description": "T9",
+    "sourceSection": "G) Veřejně prospěšné stavby a opatření",
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?"
+  },
+  "76028": {
+    "featureId": 76028,
+    "areaKey": "vps-vpo-change6:261012:76028",
+    "entityId": 96120023,
+    "type": "",
+    "identifier": "",
+    "areaNumber": "461",
+    "label": "",
+    "description": "T34",
+    "sourceSection": "G) Veřejně prospěšné stavby a opatření",
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?"
+  },
+  "76092": {
+    "featureId": 76092,
+    "areaKey": "vps-vpo-change6:261012:76092",
+    "entityId": 96120023,
+    "type": "",
+    "identifier": "",
+    "areaNumber": "947",
+    "label": "",
+    "description": "T1",
+    "sourceSection": "G) Veřejně prospěšné stavby a opatření",
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?"
+  }
+}

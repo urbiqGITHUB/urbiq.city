@@ -1,0 +1,35 @@
+{
+  "116": {
+    "areaNumber": "1006",
+    "fpId": "298_1006",
+    "featureId": 116,
+    "entityId": "90030033",
+    "areaKey": "urban-studies:261012:116",
+    "cadastralArea": "Štípa",
+    "functionCode": "BH",
+    "functionName": "Bydlení hromadné - BH",
+    "areaStatus": "3",
+    "designationType": "PLOCHY REZERV",
+    "location": "podél ulice Velíkovská",
+    "useMethod": "využití území pro bydlení",
+    "mainUse": "bydlení v bytových domech",
+    "permittedUse": "pozemky související dopravní a technické infrastruktury\npozemky veřejných prostranství\npozemky sídelní zeleně\npozemky souvisejícího občanského vybavení",
+    "conditionallyPermittedUse": "pozemky staveb komerčních zařízení, nerušící výroby a služeb za podmínky, že odpovídají charakterem a významem danému prostředí",
+    "prohibitedUse": "činnosti, které nesouvisí s hlavním využitím a které narušují kvalitu prostředí vlivy provozu a dopravní zátěží nebo takové důsledky vyvolávají druhotně",
+    "additionalConditions": "nízkopodlažní bytové domy, , dopravní napojení řešit z ul. Velíkovské, výšková hladina max. 4 NP, vytvořit průhledy do krajiny směrem k ZOO Lešná",
+    "transformationCode": "",
+    "studyCode": "RUS13",
+    "sourceSection": "I) Plochy podmíněné zpracováním územní studie",
+    "sourcePage": 101,
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?#page=101",
+    "regulationAvailable": "Ano",
+    "heightLimits": [
+      "výšková hladina max. 4 NP"
+    ],
+    "greenCoefficient": "",
+    "oneHouseCondition": "",
+    "derivedNote": "Automaticky odvozeno z textu; ověřte v původních doplňujících podmínkách.",
+    "studyType": "Studie rezervní plochy",
+    "studyConditions": ""
+  }
+}

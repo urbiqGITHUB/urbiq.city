@@ -1,0 +1,35 @@
+{
+  "2446": {
+    "areaNumber": "1184",
+    "fpId": "298_1184",
+    "featureId": 2446,
+    "entityId": "90490023",
+    "areaKey": "urban-studies:261012:2446",
+    "cadastralArea": "Zlín, Prštné",
+    "functionCode": "SC",
+    "functionName": "Smíšené obytné centrální - SC",
+    "areaStatus": "2",
+    "designationType": "TRANFORMAČNÍCH PLOCHY",
+    "location": "Rybníky",
+    "useMethod": "využití území pro městské centrum",
+    "mainUse": "",
+    "permittedUse": "pozemky staveb veřejného občanského vybavení\npozemky staveb komerčních zařízení - obchodních domů\npozemky staveb pro bydlení\npozemky staveb pro komerční zařízení,\npozemky související dopravní a technické infrastruktury\npozemky veřejných prostranství\npozemky sídelní zeleně\nstávající výroba v nezměněném objemu",
+    "conditionallyPermittedUse": "pozemky staveb pro nerušící výrobu za podmínky, že odpovídají charakterem a významem danému prostředí",
+    "prohibitedUse": "činnosti, které jsou v rozporu s přípustným využitím a které narušují kvalitu prostředí vlivy provozu a dopravní zátěží nebo takové důsledky vyvolávají druhotně\npozemky staveb komerčních zařízení -  nákupních center",
+    "additionalConditions": "obsluha území z ulice Nábřeží a z budoucí Pravobřežní komunikacevýšková regulace zástavby max. 2NP pro rodinné domy a max. 5NP bez podkroví pro bytové domy a stavby občanského vybavenívyužití území pro umisťování akusticky chráněných staveb (bytových domů, rodinných domů, staveb pro předškolní a školní výchovu a vzdělávání, staveb pro zdravotní a sociální účel, jakož i funkčně obdobných staveb) pouze jako podmíněně přípustné využití území za předpokladu zajištění ochrany před hlukem ze stávajících zdrojů hluku v průmyslové lokalitě Rybníkyzpracování územní studie je nezbytnou podmínkou pro rozhodování",
+    "transformationCode": "P78",
+    "studyCode": "US11",
+    "sourceSection": "I) Plochy podmíněné zpracováním územní studie",
+    "sourcePage": 102,
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?#page=102",
+    "regulationAvailable": "Ano",
+    "heightLimits": [
+      "výšková regulace zástavby max. 2NP"
+    ],
+    "greenCoefficient": "",
+    "oneHouseCondition": "",
+    "derivedNote": "Automaticky odvozeno z textu; ověřte v původních doplňujících podmínkách.",
+    "studyType": "Územní studie jako podmínka rozhodování",
+    "studyConditions": "územní studie prověří dopravní infrastrukturu v lokalitě ve vazbě na strukturu zástavby a podrobnější podmínky prostorového uspořádání,  dbát na vytvoření kvalitních veřejných prostranství odpovídajících městskému centru"
+  }
+}

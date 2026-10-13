@@ -1,0 +1,35 @@
+{
+  "891": {
+    "areaNumber": "426",
+    "fpId": "298_426",
+    "featureId": 891,
+    "entityId": "90040023",
+    "areaKey": "urban-studies:261012:891",
+    "cadastralArea": "Kudlov",
+    "functionCode": "BI",
+    "functionName": "Bydlení individuální - BI",
+    "areaStatus": "2",
+    "designationType": "PLOCHY ZASTAVITELNÉ",
+    "location": "mezi obchvatem a zastavěným územím",
+    "useMethod": "využití území pro bydlení",
+    "mainUse": "bydlení v rodinných domech a vilách",
+    "permittedUse": "pozemky související dopravní a technické infrastruktury\npozemky sídelní zeleně\npozemky veřejných prostranství\npozemky souvisejícího občanského vybavení (z toho maloobchod do 1000m2 prodejní plochy)",
+    "conditionallyPermittedUse": "stávající (existující) pozemky staveb hromadného bydlení za podmínky zachování objemových parametrů zástavby s tím, že zástavba musí charakterem a významem odpovídat danému prostředí",
+    "prohibitedUse": "činnosti, které nesouvisí s hlavním využitím a které narušují kvalitu prostředí vlivy provozu a dopravní zátěží nebo takové důsledky vyvolávají druhotně\npozemky staveb pro rodinnou rekreaci",
+    "additionalConditions": "zpracování územní studie je nezbytnou podmínkou pro rozhodování - na zbývající část lokalityurbanistickým řešením zohlednit navržený obchvatdopravní obsluhu řešit z ul. K Dálnici a z navrženého obchvatuvýšková regulace zástavby – max. 1 NP s podkrovím, max. 2 NP bez podkroví",
+    "transformationCode": "",
+    "studyCode": "US5",
+    "sourceSection": "I) Plochy podmíněné zpracováním územní studie",
+    "sourcePage": 101,
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?#page=101",
+    "regulationAvailable": "Ano",
+    "heightLimits": [
+      "výšková regulace zástavby – max. 1 NP"
+    ],
+    "greenCoefficient": "",
+    "oneHouseCondition": "",
+    "derivedNote": "Automaticky odvozeno z textu; ověřte v původních doplňujících podmínkách.",
+    "studyType": "Územní studie jako podmínka rozhodování",
+    "studyConditions": "stanovit podrobnější podmínky prostorového uspořádání, řešit dopravní obsluhu a napojení technickou infrastrukturou"
+  }
+}

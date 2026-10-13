@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "release": "261012_v10",
+  "generatedAt": "2026-10-12T22:03:35.724Z",
+  "kam": {
+    "sourceFeatures": 25,
+    "publishedFeatures": 25,
+    "attachmentCount": 6,
+    "tileCount": 2300,
+    "totalBytes": 66333,
+    "maxTileBytes": 1850,
+    "decodedAtMaxZoom": 25
+  },
+  "infrastructure": {
+    "expectedSourceLayers": 20,
+    "sourceLayers": 20,
+    "sourceFeatures": 155522,
+    "publishedFeatures": 155522,
+    "lineFeatures": 97233,
+    "polygonFeatures": 58289,
+    "countsBySourceLayer": {
+      "068_ti_ek_lin": 36127,
+      "069_ti_ek_pol": 8,
+      "071_ti_elektro_lin": 17829,
+      "072_ti_elektro_pol": 186,
+      "080_ti_op_stanice_elektricke_site_p_pol": 1,
+      "097_zamer_ti_elektricka_sit_koridor_plocha_pol": 2,
+      "074_ti_kanal_lin": 11345,
+      "075_ti_kanal_pol": 11345,
+      "082_ti_plyn_lin": 17828,
+      "090_ti_teplo_lin": 593,
+      "091_ti_teplo_polZ": 2,
+      "093_ti_vodov_lin": 9522,
+      "094_ti_vodov_pol": 9522,
+      "079_ti_ochr_pasma_pol": 37222,
+      "077_ti_meliorace_linZ": 5,
+      "078_ti_odpady_polZ": 1,
+      "084_ti_produk_linZ": 21,
+      "086_ti_prubeh_jine_technologicke_stavby_ti_l_linZ": 15,
+      "088_ti_sdil_stavba_lin": 3936,
+      "096_ti_zarizeni_di_linZ": 12
+    },
+    "tileCount": 2300,
+    "totalBytes": 43409988,
+    "maxTileBytes": 3520508,
+    "decodedAtMaxZoom": 155522
+  }
+}

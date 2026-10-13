@@ -1,0 +1,33 @@
+{
+  "3208": {
+    "areaNumber": "90",
+    "fpId": "298_90",
+    "featureId": 3208,
+    "entityId": "90710033",
+    "areaKey": "urban-studies:261012:3208",
+    "cadastralArea": "Louky nad Dřevnicí",
+    "functionCode": "ZK",
+    "functionName": "Zeleň krajinná - ZK",
+    "areaStatus": "3",
+    "designationType": "PLOCHY REZERV",
+    "location": "terasy Louky",
+    "useMethod": "krajinná zeleň",
+    "mainUse": "zeleň na nelesních pozemcích",
+    "permittedUse": "ÚSES (biokoridory)\nopatření přispívající k zadržení vody v krajině, hrazení bystřin, vodní plochy",
+    "conditionallyPermittedUse": "nezbytně nutné stavby dopravní a technické infrastruktury\nstavby rozhleden, drobných staveb (např. kapličky, boží muka, křížky, památníky), odpočívadel, cyklostezky v případě, že nedojde k narušení krajinného rázu",
+    "prohibitedUse": "činnosti a zařízení narušující přírodní hodnoty území\nčinnosti snižující ekologickou hodnotu území\njakékoli změny využití, které by znemožnily či ohrozily funkčnost biokoridoru nebo územní ochranu ploch navrhovaných k začlenění do nich\noplocení\nstavby a zařízení pro zemědělství, lesnictví, těžbu nerostů, rekreaci a cestovní ruch",
+    "additionalConditions": "prověřit podmínky ochrany hodnot území",
+    "transformationCode": "",
+    "studyCode": "RUS1",
+    "sourceSection": "I) Plochy podmíněné zpracováním územní studie",
+    "sourcePage": 102,
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?#page=102",
+    "regulationAvailable": "Ano",
+    "heightLimits": [],
+    "greenCoefficient": "",
+    "oneHouseCondition": "",
+    "derivedNote": "",
+    "studyType": "Studie rezervní plochy",
+    "studyConditions": ""
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "2396": {
+    "areaNumber": "390",
+    "fpId": "298_390",
+    "featureId": 2396,
+    "entityId": "90480033",
+    "areaKey": "urban-studies:261012:2396",
+    "cadastralArea": "Louky nad Dřevnicí",
+    "functionCode": "SU",
+    "functionName": "Smíšené obytné všeobecné - SU",
+    "areaStatus": "3",
+    "designationType": "PLOCHY REZERV",
+    "location": "západně od zastavěného území",
+    "useMethod": "využití území pro smíšené bydlení",
+    "mainUse": "bydlení",
+    "permittedUse": "pozemky staveb a zařízení souvisejícího občanského vybavení (z toho maloobchod do 1000 m2 prodejní plochy)\npozemky objektů pro rodinnou rekreaci\npozemky veřejných prostranství, pozemky sídelní zeleně\npozemky související dopravní a technické infrastruktury",
+    "conditionallyPermittedUse": "",
+    "prohibitedUse": "činnosti, které jsou v rozporu s hlavním využitím a které narušují kvalitu prostředí vlivy provozu a dopravní zátěží nebo takové důsledky vyvolávají druhotně",
+    "additionalConditions": "prověřit způsob zástavby s ohledem na ochranu hodnot území",
+    "transformationCode": "",
+    "studyCode": "RUS4",
+    "sourceSection": "I) Plochy podmíněné zpracováním územní studie",
+    "sourcePage": 101,
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?#page=101",
+    "regulationAvailable": "Ano",
+    "heightLimits": [],
+    "greenCoefficient": "",
+    "oneHouseCondition": "",
+    "derivedNote": "",
+    "studyType": "Studie rezervní plochy",
+    "studyConditions": ""
+  }
+}

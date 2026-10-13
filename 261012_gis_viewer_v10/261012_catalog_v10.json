@@ -1,0 +1,6455 @@
+{
+  "schemaVersion": 6,
+  "title": "Zlín · prostorové vrstvy",
+  "bounds": [
+    17.54885361630415,
+    49.1642520383582,
+    17.7866163352761,
+    49.2997862698797
+  ],
+  "release": "261012_v10",
+  "sourceRecordCount": 25506,
+  "missingGeometryCount": 42,
+  "groups": [
+    {
+      "id": "basemap",
+      "name": "Podkladní mapy"
+    },
+    {
+      "id": "reference",
+      "name": "Referenční vrstvy"
+    },
+    {
+      "id": "thematic",
+      "name": "Tematické vrstvy",
+      "subgroups": [
+        {
+          "id": "analytics",
+          "name": "Analytika"
+        },
+        {
+          "id": "urban-plan",
+          "name": "Územní plán po změně č. 6"
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "id": "buildings",
+      "name": "Budovy – podlažnost",
+      "type": "vector",
+      "tiles": "261007_tiles_v01/{z}/{x}/261007_{y}.pbf",
+      "sourceLayer": "buildings",
+      "visible": true,
+      "opacity": 0.85,
+      "theme": "floors",
+      "count": 25464,
+      "group": "thematic",
+      "enabled": true,
+      "expanded": false,
+      "order": 10,
+      "legend": {
+        "initialLimit": 8
+      },
+      "sourceMinZoom": 10,
+      "sourceMaxZoom": 16,
+      "displayMinZoom": 10,
+      "displayMaxZoom": 24,
+      "subgroup": "analytics",
+      "detail": {
+        "template": "261007_details_v01/261007_{bucket}.json",
+        "fields": [
+          {
+            "key": "buildingCode",
+            "label": "Kód budovy",
+            "order": 0,
+            "format": "text",
+            "empty": "show",
+            "section": "content"
+          },
+          {
+            "key": "floors",
+            "label": "Podlaží",
+            "order": 1,
+            "format": "integer",
+            "empty": "show",
+            "section": "content"
+          },
+          {
+            "key": "useCode",
+            "label": "Kód využití",
+            "order": 2,
+            "format": "text",
+            "empty": "show",
+            "section": "content"
+          }
+        ],
+        "summary": {
+          "title": [
+            "functionName",
+            "label",
+            "type",
+            "category",
+            "period"
+          ],
+          "codes": [
+            "functionCode",
+            "areaNumber",
+            "fpId",
+            "studyCode",
+            "identifier"
+          ],
+          "technical": [
+            "featureId"
+          ]
+        }
+      },
+      "filters": [
+        {
+          "id": "floors",
+          "label": "Podlažnost",
+          "type": "categories",
+          "selection": "multiple",
+          "field": "floors",
+          "items": [
+            {
+              "value": "1",
+              "label": "1 podlaží",
+              "color": "#b4d5bf",
+              "filter": [
+                "==",
+                [
+                  "get",
+                  "floors"
+                ],
+                1
+              ],
+              "selected": true
+            },
+            {
+              "value": "2",
+              "label": "2 podlaží",
+              "color": "#94c6ac",
+              "filter": [
+                "==",
+                [
+                  "get",
+                  "floors"
+                ],
+                2
+              ],
+              "selected": true
+            },
+            {
+              "value": "3",
+              "label": "3 podlaží",
+              "color": "#6ab293",
+              "filter": [
+                "==",
+                [
+                  "get",
+                  "floors"
+                ],
+                3
+              ],
+              "selected": true
+            },
+            {
+              "value": "4-5",
+              "label": "4–5 podlaží",
+              "color": "#499e82",
+              "filter": [
+                "all",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "floors"
+                  ],
+                  4
+                ],
+                [
+                  "<=",
+                  [
+                    "get",
+                    "floors"
+                  ],
+                  5
+                ]
+              ],
+              "selected": true
+            },
+            {
+              "value": "6-8",
+              "label": "6–8 podlaží",
+              "color": "#287c67",
+              "filter": [
+                "all",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "floors"
+                  ],
+                  6
+                ],
+                [
+                  "<=",
+                  [
+                    "get",
+                    "floors"
+                  ],
+                  8
+                ]
+              ],
+              "selected": true
+            },
+            {
+              "value": "9-13",
+              "label": "9–13 podlaží",
+              "color": "#1b584e",
+              "filter": [
+                "all",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "floors"
+                  ],
+                  9
+                ],
+                [
+                  "<=",
+                  [
+                    "get",
+                    "floors"
+                  ],
+                  13
+                ]
+              ],
+              "selected": true
+            },
+            {
+              "value": "14+",
+              "label": "14 a více podlaží",
+              "color": "#14393d",
+              "filter": [
+                ">=",
+                [
+                  "get",
+                  "floors"
+                ],
+                14
+              ],
+              "selected": true
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "label": "Veřejná ArcGIS služba – podlažnost budov",
+          "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/arcgis/rest/services/Podlaznost_vysky/FeatureServer/0",
+          "role": "Zdrojová datová služba"
+        }
+      ],
+      "sourceStatus": "public",
+      "sourceCheckedAt": "2026-10-12",
+      "sourceReferences": [
+        {
+          "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/arcgis/rest/services/Podlaznost_vysky/FeatureServer/0",
+          "role": "geometry-and-attributes"
+        }
+      ],
+      "renderParts": [
+        {
+          "id": "main",
+          "sourceLayer": "buildings",
+          "geometryTypes": [
+            "polygon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blocks",
+      "name": "Bloková mapa",
+      "type": "vector",
+      "tiles": "261007_blocks_tiles_v02/{z}/{x}/261007_{y}.pbf",
+      "sourceLayer": "blocks",
+      "visible": false,
+      "opacity": 0.65,
+      "theme": "density",
+      "count": 1478,
+      "bounds": [
+        17.563009354,
+        49.170321165,
+        17.78188113,
+        49.289609984
+      ],
+      "sourceHash": "45aed70f03a0a093a08c1e11c3b71df88b5db9f1160ecbe42abfb2fdac0d079a",
+      "categories": [
+        "blok individuálního bydlení",
+        "areál občanské vybavenosti",
+        "blok hromadného bydlení",
+        "blok baťovských čtvrtí",
+        "areál výrobní",
+        "blok rekreace",
+        "blok městský",
+        "významná samostatně stojící budova"
+      ],
+      "group": "thematic",
+      "enabled": false,
+      "expanded": false,
+      "order": 11,
+      "legend": {
+        "initialLimit": 8
+      },
+      "sourceMinZoom": 10,
+      "sourceMaxZoom": 16,
+      "displayMinZoom": 10,
+      "displayMaxZoom": 24,
+      "subgroup": "analytics",
+      "detail": {
+        "template": "261007_blocks_details_v02/261007_{bucket}.json",
+        "fields": [
+          {
+            "key": "Typy_bloků",
+            "label": "Typologie",
+            "order": 0,
+            "format": "text",
+            "empty": "show",
+            "section": "content"
+          },
+          {
+            "key": "Hustota",
+            "label": "Obyvatel / ha",
+            "order": 1,
+            "format": "decimal:1",
+            "empty": "show",
+            "section": "content"
+          },
+          {
+            "key": "IZ",
+            "label": "Index zastavěnosti",
+            "order": 2,
+            "format": "decimal:2",
+            "empty": "show",
+            "section": "content"
+          },
+          {
+            "key": "Index_podlaznosti",
+            "label": "Index podlažnosti",
+            "order": 3,
+            "format": "decimal:2",
+            "empty": "show",
+            "section": "content"
+          }
+        ],
+        "summary": {
+          "title": [
+            "functionName",
+            "label",
+            "type",
+            "category",
+            "period"
+          ],
+          "codes": [
+            "functionCode",
+            "areaNumber",
+            "fpId",
+            "studyCode",
+            "identifier"
+          ],
+          "technical": [
+            "featureId"
+          ]
+        }
+      },
+      "filters": [
+        {
+          "id": "density",
+          "label": "Hustota obyvatel / ha",
+          "type": "categories",
+          "selection": "multiple",
+          "field": "density",
+          "items": [
+            {
+              "value": "density-0",
+              "label": "< 20",
+              "color": "#f5e6c8",
+              "filter": [
+                "<",
+                [
+                  "get",
+                  "density"
+                ],
+                20
+              ],
+              "selected": true
+            },
+            {
+              "value": "density-1",
+              "label": "20–<50",
+              "color": "#e6cb8d",
+              "filter": [
+                "all",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "density"
+                  ],
+                  20
+                ],
+                [
+                  "<",
+                  [
+                    "get",
+                    "density"
+                  ],
+                  50
+                ]
+              ],
+              "selected": true
+            },
+            {
+              "value": "density-2",
+              "label": "50–<100",
+              "color": "#dba861",
+              "filter": [
+                "all",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "density"
+                  ],
+                  50
+                ],
+                [
+                  "<",
+                  [
+                    "get",
+                    "density"
+                  ],
+                  100
+                ]
+              ],
+              "selected": true
+            },
+            {
+              "value": "density-3",
+              "label": "100–<150",
+              "color": "#c08044",
+              "filter": [
+                "all",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "density"
+                  ],
+                  100
+                ],
+                [
+                  "<",
+                  [
+                    "get",
+                    "density"
+                  ],
+                  150
+                ]
+              ],
+              "selected": true
+            },
+            {
+              "value": "density-4",
+              "label": "150–<200",
+              "color": "#a65c32",
+              "filter": [
+                "all",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "density"
+                  ],
+                  150
+                ],
+                [
+                  "<",
+                  [
+                    "get",
+                    "density"
+                  ],
+                  200
+                ]
+              ],
+              "selected": true
+            },
+            {
+              "value": "density-5",
+              "label": "≥ 200",
+              "color": "#763a26",
+              "filter": [
+                ">=",
+                [
+                  "get",
+                  "density"
+                ],
+                200
+              ],
+              "selected": true
+            }
+          ]
+        },
+        {
+          "id": "category",
+          "label": "Typologie",
+          "type": "categories",
+          "selection": "multiple",
+          "field": "category",
+          "items": [
+            {
+              "value": "blok individuálního bydlení",
+              "label": "blok individuálního bydlení",
+              "color": "#dfbd7e",
+              "selected": true
+            },
+            {
+              "value": "areál občanské vybavenosti",
+              "label": "areál občanské vybavenosti",
+              "color": "#d89070",
+              "selected": true
+            },
+            {
+              "value": "blok hromadného bydlení",
+              "label": "blok hromadného bydlení",
+              "color": "#859ca8",
+              "selected": true
+            },
+            {
+              "value": "blok baťovských čtvrtí",
+              "label": "blok baťovských čtvrtí",
+              "color": "#a1bb92",
+              "selected": true
+            },
+            {
+              "value": "areál výrobní",
+              "label": "areál výrobní",
+              "color": "#8b7f98",
+              "selected": true
+            },
+            {
+              "value": "blok rekreace",
+              "label": "blok rekreace",
+              "color": "#b4c7c6",
+              "selected": true
+            },
+            {
+              "value": "blok městský",
+              "label": "blok městský",
+              "color": "#c5ae9c",
+              "selected": true
+            },
+            {
+              "value": "významná samostatně stojící budova",
+              "label": "významná samostatně stojící budova",
+              "color": "#85aabd",
+              "selected": true
+            }
+          ]
+        },
+        {
+          "id": "coverage",
+          "label": "Index zastavěnosti",
+          "type": "categories",
+          "selection": "multiple",
+          "field": "coverage",
+          "items": [
+            {
+              "value": "coverage-0",
+              "label": "< 0,1",
+              "color": "#f5e6c8",
+              "filter": [
+                "<",
+                [
+                  "get",
+                  "coverage"
+                ],
+                0.1
+              ],
+              "selected": true
+            },
+            {
+              "value": "coverage-1",
+              "label": "0,1–<0,25",
+              "color": "#e6cb8d",
+              "filter": [
+                "all",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "coverage"
+                  ],
+                  0.1
+                ],
+                [
+                  "<",
+                  [
+                    "get",
+                    "coverage"
+                  ],
+                  0.25
+                ]
+              ],
+              "selected": true
+            },
+            {
+              "value": "coverage-2",
+              "label": "0,25–<0,5",
+              "color": "#dba861",
+              "filter": [
+                "all",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "coverage"
+                  ],
+                  0.25
+                ],
+                [
+                  "<",
+                  [
+                    "get",
+                    "coverage"
+                  ],
+                  0.5
+                ]
+              ],
+              "selected": true
+            },
+            {
+              "value": "coverage-3",
+              "label": "0,5–<0,75",
+              "color": "#c08044",
+              "filter": [
+                "all",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "coverage"
+                  ],
+                  0.5
+                ],
+                [
+                  "<",
+                  [
+                    "get",
+                    "coverage"
+                  ],
+                  0.75
+                ]
+              ],
+              "selected": true
+            },
+            {
+              "value": "coverage-4",
+              "label": "≥ 0,75",
+              "color": "#a65c32",
+              "filter": [
+                ">=",
+                [
+                  "get",
+                  "coverage"
+                ],
+                0.75
+              ],
+              "selected": true
+            }
+          ]
+        },
+        {
+          "id": "floorIndex",
+          "label": "Index podlažnosti",
+          "type": "categories",
+          "selection": "multiple",
+          "field": "floorIndex",
+          "items": [
+            {
+              "value": "floorIndex-0",
+              "label": "< 0,5",
+              "color": "#f5e6c8",
+              "filter": [
+                "<",
+                [
+                  "get",
+                  "floorIndex"
+                ],
+                0.5
+              ],
+              "selected": true
+            },
+            {
+              "value": "floorIndex-1",
+              "label": "0,5–<1",
+              "color": "#e6cb8d",
+              "filter": [
+                "all",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "floorIndex"
+                  ],
+                  0.5
+                ],
+                [
+                  "<",
+                  [
+                    "get",
+                    "floorIndex"
+                  ],
+                  1
+                ]
+              ],
+              "selected": true
+            },
+            {
+              "value": "floorIndex-2",
+              "label": "1–<2",
+              "color": "#dba861",
+              "filter": [
+                "all",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "floorIndex"
+                  ],
+                  1
+                ],
+                [
+                  "<",
+                  [
+                    "get",
+                    "floorIndex"
+                  ],
+                  2
+                ]
+              ],
+              "selected": true
+            },
+            {
+              "value": "floorIndex-3",
+              "label": "2–<3",
+              "color": "#c08044",
+              "filter": [
+                "all",
+                [
+                  ">=",
+                  [
+                    "get",
+                    "floorIndex"
+                  ],
+                  2
+                ],
+                [
+                  "<",
+                  [
+                    "get",
+                    "floorIndex"
+                  ],
+                  3
+                ]
+              ],
+              "selected": true
+            },
+            {
+              "value": "floorIndex-4",
+              "label": "≥ 3",
+              "color": "#a65c32",
+              "filter": [
+                ">=",
+                [
+                  "get",
+                  "floorIndex"
+                ],
+                3
+              ],
+              "selected": true
+            }
+          ]
+        }
+      ],
+      "filterMode": "classification",
+      "activeFilterId": "density",
+      "documents": [
+        {
+          "label": "03Bloková mapa – veřejná aplikace KAM Zlín",
+          "url": "https://experience.arcgis.com/experience/cdbcaf13bc4f88e743f5b6e66584b",
+          "role": "Bezpečný veřejný přehled zdroje"
+        }
+      ],
+      "sourceStatus": "public",
+      "sourceCheckedAt": "2026-10-12",
+      "sourceReferences": [
+        {
+          "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/Podlaznost2D_WFL1/FeatureServer/5",
+          "role": "internal-provenance-only",
+          "exposeInUi": false,
+          "privacyStatus": "confirmed-risk-use-sanitized-derivative"
+        }
+      ],
+      "renderParts": [
+        {
+          "id": "main",
+          "sourceLayer": "blocks",
+          "geometryTypes": [
+            "polygon"
+          ]
+        }
+      ],
+      "statusNote": "Použit je sanitizovaný derivát. Přímý zdrojový endpoint se v rozhraní nezobrazuje kvůli potvrzenému privacy riziku."
+    },
+    {
+      "id": "history",
+      "name": "Historická zástavba",
+      "type": "vector",
+      "tiles": "261007_history_tiles_v02/{z}/{x}/261007_{y}.pbf",
+      "sourceLayer": "history",
+      "visible": false,
+      "opacity": 0.9,
+      "theme": "history",
+      "count": 23351,
+      "bounds": [
+        17.563832688,
+        49.170071106,
+        17.784703641,
+        49.289297643
+      ],
+      "sourceHash": "161f3b99d3d7ecb0f1f31489f36524ac5a3a32708d7fb42e6774a493491d71ca",
+      "periods": [
+        "1829",
+        "před rokem 1918",
+        "1918-1932",
+        "1932-1941",
+        "1941-1952",
+        "1952-1960",
+        "1960-1970",
+        "1970-1989",
+        "1989-2024"
+      ],
+      "time": {
+        "min": 1829,
+        "max": 2024,
+        "year": 2024,
+        "mode": "state",
+        "from": 1989
+      },
+      "expectedStateCounts": {
+        "1829": 672,
+        "1918": 1276,
+        "1932": 3297,
+        "1970": 17443,
+        "2003": 19462,
+        "2024": 21177
+      },
+      "invalidTimeCount": 5,
+      "group": "thematic",
+      "enabled": false,
+      "expanded": false,
+      "order": 12,
+      "legend": {
+        "initialLimit": 8
+      },
+      "sourceMinZoom": 10,
+      "sourceMaxZoom": 16,
+      "displayMinZoom": 10,
+      "displayMaxZoom": 24,
+      "subgroup": "analytics",
+      "detail": {
+        "template": "261007_history_details_v02/261007_{bucket}.json",
+        "fields": [
+          {
+            "key": "Obdobi_vystavby",
+            "label": "Období",
+            "order": 0,
+            "format": "text",
+            "empty": "show",
+            "section": "content"
+          },
+          {
+            "key": "Datum_od_date",
+            "label": "Platnost od",
+            "order": 1,
+            "format": "date",
+            "empty": "show",
+            "section": "content"
+          },
+          {
+            "key": "Datum_do_date",
+            "label": "Platnost do",
+            "order": 2,
+            "format": "date-or-current",
+            "empty": "show",
+            "section": "content"
+          },
+          {
+            "key": "Mapovy_podklad",
+            "label": "Mapový podklad",
+            "order": 3,
+            "format": "text",
+            "empty": "show",
+            "section": "content"
+          }
+        ],
+        "summary": {
+          "title": [
+            "functionName",
+            "label",
+            "type",
+            "category",
+            "period"
+          ],
+          "codes": [
+            "functionCode",
+            "areaNumber",
+            "fpId",
+            "studyCode",
+            "identifier"
+          ],
+          "technical": [
+            "featureId"
+          ]
+        }
+      },
+      "filters": [
+        {
+          "id": "period",
+          "label": "Období výstavby",
+          "type": "categories",
+          "selection": "multiple",
+          "field": "period",
+          "items": [
+            {
+              "value": "1829",
+              "label": "1829",
+              "color": "#65575e",
+              "selected": true
+            },
+            {
+              "value": "před rokem 1918",
+              "label": "před rokem 1918",
+              "color": "#887785",
+              "selected": true
+            },
+            {
+              "value": "1918-1932",
+              "label": "1918-1932",
+              "color": "#a58b96",
+              "selected": true
+            },
+            {
+              "value": "1932-1941",
+              "label": "1932-1941",
+              "color": "#bd9ca3",
+              "selected": true
+            },
+            {
+              "value": "1941-1952",
+              "label": "1941-1952",
+              "color": "#d1b4ae",
+              "selected": true
+            },
+            {
+              "value": "1952-1960",
+              "label": "1952-1960",
+              "color": "#dfc3a2",
+              "selected": true
+            },
+            {
+              "value": "1960-1970",
+              "label": "1960-1970",
+              "color": "#d8cb86",
+              "selected": true
+            },
+            {
+              "value": "1970-1989",
+              "label": "1970-1989",
+              "color": "#abc597",
+              "selected": true
+            },
+            {
+              "value": "1989-2024",
+              "label": "1989-2024",
+              "color": "#629c8b",
+              "selected": true
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "label": "Veřejná ArcGIS služba – historická zástavba",
+          "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/Z%C3%A1stavba_1918_2024_v%C5%A1e/FeatureServer/46",
+          "role": "Zdrojová datová služba"
+        }
+      ],
+      "sourceStatus": "public",
+      "sourceCheckedAt": "2026-10-12",
+      "sourceReferences": [
+        {
+          "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/Z%C3%A1stavba_1918_2024_v%C5%A1e/FeatureServer/46",
+          "role": "geometry-and-attributes"
+        }
+      ],
+      "renderParts": [
+        {
+          "id": "main",
+          "sourceLayer": "history",
+          "geometryTypes": [
+            "polygon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kam-projects",
+      "name": "Projekty KAM",
+      "group": "thematic",
+      "subgroup": "analytics",
+      "type": "vector",
+      "enabled": false,
+      "expanded": false,
+      "opacity": 0.9,
+      "order": 13,
+      "tiles": "261012_kam_tiles_v10/{z}/{x}/261012_{y}.pbf",
+      "sourceLayer": "kam_projects",
+      "renderParts": [
+        {
+          "id": "points",
+          "sourceLayer": "kam_projects",
+          "geometryTypes": [
+            "point"
+          ]
+        }
+      ],
+      "geometryTypes": [
+        "point"
+      ],
+      "sourceMinZoom": 10,
+      "sourceMaxZoom": 16,
+      "displayMinZoom": 10,
+      "displayMaxZoom": 24,
+      "legend": {
+        "field": "status",
+        "initialLimit": 8,
+        "items": [
+          {
+            "value": "Aktivní projekt",
+            "label": "Aktivní projekt",
+            "color": "#14642d",
+            "selected": true
+          },
+          {
+            "value": "Projekt v přípravě",
+            "label": "Projekt v přípravě",
+            "color": "#ecc83f",
+            "selected": true
+          },
+          {
+            "value": "Projekt zrealizován",
+            "label": "Projekt zrealizován",
+            "color": "#5d6b5f",
+            "selected": true
+          }
+        ]
+      },
+      "filters": [
+        {
+          "id": "status",
+          "label": "Stav projektu",
+          "type": "categories",
+          "field": "status",
+          "selection": "multiple",
+          "items": [
+            {
+              "value": "Aktivní projekt",
+              "label": "Aktivní projekt",
+              "color": "#14642d",
+              "selected": true
+            },
+            {
+              "value": "Projekt v přípravě",
+              "label": "Projekt v přípravě",
+              "color": "#ecc83f",
+              "selected": true
+            },
+            {
+              "value": "Projekt zrealizován",
+              "label": "Projekt zrealizován",
+              "color": "#5d6b5f",
+              "selected": true
+            }
+          ]
+        },
+        {
+          "id": "project-type",
+          "label": "Typ projektu",
+          "type": "categories",
+          "field": "projectType",
+          "selection": "multiple",
+          "items": [
+            {
+              "value": "Studie",
+              "label": "Studie",
+              "color": "#14642d",
+              "selected": true
+            },
+            {
+              "value": "Zadání",
+              "label": "Zadání",
+              "color": "#c6d92b",
+              "selected": true
+            },
+            {
+              "value": "Soutěž",
+              "label": "Soutěž",
+              "color": "#e58a2b",
+              "selected": true
+            },
+            {
+              "value": "Koncepce",
+              "label": "Koncepce",
+              "color": "#668a70",
+              "selected": true
+            },
+            {
+              "value": "Prováděcí dokumentace",
+              "label": "Prováděcí dokumentace",
+              "color": "#587a8c",
+              "selected": true
+            },
+            {
+              "value": "Paralelní zadání studie",
+              "label": "Paralelní zadání studie",
+              "color": "#8b7f98",
+              "selected": true
+            },
+            {
+              "value": "Neuvedeno",
+              "label": "Neuvedeno",
+              "color": "#929ba0",
+              "selected": true
+            }
+          ]
+        }
+      ],
+      "detail": {
+        "template": "261012_kam_details_v10/261012_{bucket}.json",
+        "summary": {
+          "title": [
+            "name"
+          ],
+          "codes": [
+            "projectNumber"
+          ],
+          "technical": [
+            "featureId"
+          ]
+        },
+        "fields": [
+          {
+            "key": "name",
+            "label": "Název projektu",
+            "format": "text",
+            "section": "names",
+            "order": 0,
+            "empty": "show"
+          },
+          {
+            "key": "projectNumber",
+            "label": "Číslo projektu",
+            "format": "text",
+            "section": "codes",
+            "order": 1,
+            "empty": "show"
+          },
+          {
+            "key": "year",
+            "label": "Rok",
+            "format": "integer",
+            "section": "content",
+            "order": 2,
+            "empty": "show"
+          },
+          {
+            "key": "status",
+            "label": "Stav projektu",
+            "format": "text",
+            "section": "content",
+            "order": 3,
+            "empty": "show"
+          },
+          {
+            "key": "kamRole",
+            "label": "Role KAM",
+            "format": "text",
+            "section": "content",
+            "order": 4,
+            "empty": "show"
+          },
+          {
+            "key": "projectType",
+            "label": "Typ projektu",
+            "format": "text",
+            "section": "content",
+            "order": 5,
+            "empty": "show"
+          },
+          {
+            "key": "description",
+            "label": "Popis projektu",
+            "format": "multiline",
+            "section": "content",
+            "order": 6,
+            "empty": "show"
+          },
+          {
+            "key": "attachments",
+            "label": "Veřejné přílohy",
+            "format": "links",
+            "section": "source",
+            "order": 7,
+            "empty": "show"
+          },
+          {
+            "key": "sourceFeatureId",
+            "label": "ID zdrojového prvku",
+            "format": "integer",
+            "section": "technical",
+            "order": 8,
+            "empty": "show"
+          },
+          {
+            "key": "featureId",
+            "label": "ID prvku GIS",
+            "format": "integer",
+            "section": "technical",
+            "order": 9,
+            "empty": "show"
+          }
+        ]
+      },
+      "documents": [
+        {
+          "label": "Veřejná ArcGIS služba – Projekty KAM",
+          "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/Projekty_KAM/FeatureServer/0",
+          "role": "Zdrojová datová služba"
+        }
+      ],
+      "sourceStatus": "public",
+      "sourceCheckedAt": "2026-10-12",
+      "sourceReferences": [
+        {
+          "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/Projekty_KAM/FeatureServer/0",
+          "role": "geometry-attributes-and-attachments"
+        }
+      ],
+      "attribution": "KAM Zlín · archivováno 2026-10-08",
+      "statusNote": "Zdroj obsahuje 25 bodů. Stav aktuálnosti dat byl naposledy doložen úpravou služby 22. 11. 2023."
+    },
+    {
+      "id": "technical-infrastructure",
+      "name": "Technická infrastruktura 2025",
+      "group": "thematic",
+      "subgroup": "analytics",
+      "type": "vector",
+      "enabled": false,
+      "expanded": false,
+      "opacity": 0.82,
+      "order": 14,
+      "tiles": "261012_infrastructure_tiles_v10/{z}/{x}/261012_{y}.pbf",
+      "sourceLayer": "infrastructure_line",
+      "renderParts": [
+        {
+          "id": "lines",
+          "sourceLayer": "infrastructure_line",
+          "geometryTypes": [
+            "line"
+          ]
+        },
+        {
+          "id": "areas",
+          "sourceLayer": "infrastructure_polygon",
+          "geometryTypes": [
+            "polygon"
+          ]
+        }
+      ],
+      "geometryTypes": [
+        "line",
+        "polygon"
+      ],
+      "sourceMinZoom": 10,
+      "sourceMaxZoom": 16,
+      "displayMinZoom": 10,
+      "displayMaxZoom": 24,
+      "legend": {
+        "field": "category",
+        "initialLimit": 8,
+        "items": [
+          {
+            "value": "electronic-communications",
+            "label": "Elektronické komunikace",
+            "color": "#7b4d9d",
+            "selected": true
+          },
+          {
+            "value": "electricity",
+            "label": "Elektřina",
+            "color": "#d4a517",
+            "selected": true
+          },
+          {
+            "value": "sewerage",
+            "label": "Kanalizace",
+            "color": "#7b6755",
+            "selected": true
+          },
+          {
+            "value": "gas",
+            "label": "Plyn",
+            "color": "#d06f28",
+            "selected": true
+          },
+          {
+            "value": "heat",
+            "label": "Teplo",
+            "color": "#c0532b",
+            "selected": true
+          },
+          {
+            "value": "water",
+            "label": "Voda",
+            "color": "#2474a6",
+            "selected": true
+          },
+          {
+            "value": "protection-zones",
+            "label": "Ochranná pásma",
+            "color": "#8f9a91",
+            "selected": false
+          },
+          {
+            "value": "other",
+            "label": "Ostatní infrastruktura",
+            "color": "#5d6b5f",
+            "selected": true
+          }
+        ]
+      },
+      "filters": [
+        {
+          "id": "category",
+          "label": "Druh infrastruktury",
+          "type": "categories",
+          "field": "category",
+          "selection": "multiple",
+          "items": [
+            {
+              "value": "electronic-communications",
+              "label": "Elektronické komunikace",
+              "color": "#7b4d9d",
+              "selected": true
+            },
+            {
+              "value": "electricity",
+              "label": "Elektřina",
+              "color": "#d4a517",
+              "selected": true
+            },
+            {
+              "value": "sewerage",
+              "label": "Kanalizace",
+              "color": "#7b6755",
+              "selected": true
+            },
+            {
+              "value": "gas",
+              "label": "Plyn",
+              "color": "#d06f28",
+              "selected": true
+            },
+            {
+              "value": "heat",
+              "label": "Teplo",
+              "color": "#c0532b",
+              "selected": true
+            },
+            {
+              "value": "water",
+              "label": "Voda",
+              "color": "#2474a6",
+              "selected": true
+            },
+            {
+              "value": "protection-zones",
+              "label": "Ochranná pásma",
+              "color": "#8f9a91",
+              "selected": false
+            },
+            {
+              "value": "other",
+              "label": "Ostatní infrastruktura",
+              "color": "#5d6b5f",
+              "selected": true
+            }
+          ]
+        }
+      ],
+      "detail": {
+        "template": "261012_infrastructure_details_v10/261012_{bucket}.json",
+        "summary": {
+          "title": [
+            "category",
+            "objectType"
+          ],
+          "codes": [
+            "evidenceCode"
+          ],
+          "technical": [
+            "featureId"
+          ]
+        },
+        "fields": [
+          {
+            "key": "category",
+            "label": "Kategorie infrastruktury",
+            "format": "text",
+            "section": "names",
+            "order": 0,
+            "empty": "show"
+          },
+          {
+            "key": "objectType",
+            "label": "Druh objektu nebo vedení",
+            "format": "text",
+            "section": "names",
+            "order": 1,
+            "empty": "show"
+          },
+          {
+            "key": "evidenceCode",
+            "label": "Evidenční kód",
+            "format": "text",
+            "section": "codes",
+            "order": 2,
+            "empty": "show"
+          },
+          {
+            "key": "dimension",
+            "label": "Dimenze nebo kapacita",
+            "format": "text",
+            "section": "content",
+            "order": 3,
+            "empty": "show"
+          },
+          {
+            "key": "geometryType",
+            "label": "Geometrie",
+            "format": "text",
+            "section": "content",
+            "order": 4,
+            "empty": "show"
+          },
+          {
+            "key": "updatedDate",
+            "label": "Datum aktualizace ve zdroji",
+            "format": "text",
+            "section": "source",
+            "order": 5,
+            "empty": "show"
+          },
+          {
+            "key": "sourceSubtype",
+            "label": "Zdrojová podvrstva",
+            "format": "text",
+            "section": "source",
+            "order": 6,
+            "empty": "show"
+          },
+          {
+            "key": "sourceLayerId",
+            "label": "ID zdrojové vrstvy",
+            "format": "integer",
+            "section": "technical",
+            "order": 7,
+            "empty": "show"
+          },
+          {
+            "key": "sourceFeatureId",
+            "label": "ID zdrojového prvku",
+            "format": "text",
+            "section": "technical",
+            "order": 8,
+            "empty": "show"
+          },
+          {
+            "key": "featureId",
+            "label": "ID publikovaného prvku",
+            "format": "integer",
+            "section": "technical",
+            "order": 9,
+            "empty": "show"
+          }
+        ]
+      },
+      "documents": [
+        {
+          "label": "Původní ArcGIS položka – Technická infrastruktura 2025",
+          "url": "https://www.arcgis.com/home/item.html?id=c510bba6b7534db1938dd159cbf9c929",
+          "role": "Zdrojová položka; endpoint nyní vyžaduje přihlášení"
+        }
+      ],
+      "sourceStatus": "archived-public",
+      "sourceCheckedAt": "2026-10-12",
+      "sourceReferences": [
+        {
+          "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/Technick%C3%A1_infrastruktura_2025/FeatureServer",
+          "role": "original-endpoint",
+          "accessOnCheck": "token-required"
+        },
+        {
+          "localInventory": "261009_inventory.json",
+          "serviceItemId": "c510bba6b7534db1938dd159cbf9c929",
+          "role": "archived-source-record"
+        }
+      ],
+      "attribution": "Archiv veřejné služby KAM Zlín · 20 podvrstev · stav archivu 2026-10-09",
+      "statusNote": "Pilotní vrstva z archivovaného veřejného zdroje; aktuální endpoint není veřejně dostupný. Nejde o úplný koordinační výkres ani o závaznou část územního plánu."
+    },
+    {
+      "id": "urban-plan-change6",
+      "name": "Funkční plochy",
+      "type": "vector",
+      "group": "thematic",
+      "tiles": "261012_change6_tiles_v10/{z}/{x}/261012_{y}.pbf",
+      "sourceLayer": "urban_plan_change6",
+      "enabled": false,
+      "expanded": false,
+      "opacity": 0.72,
+      "order": 30,
+      "theme": "catalog",
+      "count": 4206,
+      "legend": {
+        "field": "category",
+        "initialLimit": 8,
+        "items": [
+          {
+            "value": "90020013",
+            "label": "plochy bydlení",
+            "field": "category",
+            "order": 0,
+            "code": "BU",
+            "color": "#ff3200",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90020023",
+            "label": "plochy bydlení",
+            "field": "category",
+            "order": 1,
+            "code": "BU",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90030013",
+            "label": "plochy bydlení hromadného",
+            "field": "category",
+            "order": 2,
+            "code": "BH",
+            "color": "#e01616",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90030023",
+            "label": "plochy bydlení hromadného",
+            "field": "category",
+            "order": 3,
+            "code": "BH",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90030033",
+            "label": "plochy bydlení hromadné - rezerva",
+            "field": "category",
+            "order": 4,
+            "code": "BH",
+            "color": "#000000",
+            "fillOpacity": 0,
+            "outlineColor": "#e01616",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "reserve",
+            "pattern": {
+              "type": "dots",
+              "size": 16,
+              "spacing": 8,
+              "radius": 1.6,
+              "backgroundOpacity": 0.1,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90040013",
+            "label": "plochy bydlení individuálního",
+            "field": "category",
+            "order": 5,
+            "code": "BI",
+            "color": "#ff6400",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90040023",
+            "label": "plochy bydlení individuálního",
+            "field": "category",
+            "order": 6,
+            "code": "BI",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90040033",
+            "label": "plochy bydlení individuální - rezerva",
+            "field": "category",
+            "order": 7,
+            "code": "BI",
+            "color": "#000000",
+            "fillOpacity": 0,
+            "outlineColor": "#ff6400",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "reserve",
+            "pattern": {
+              "type": "dots",
+              "size": 16,
+              "spacing": 8,
+              "radius": 1.6,
+              "backgroundOpacity": 0.1,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90050013",
+            "label": "plochy bydlení specifických forem",
+            "field": "category",
+            "order": 8,
+            "code": "BX",
+            "color": "#ff0000",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90050023",
+            "label": "plochy bydlení specifických forem",
+            "field": "category",
+            "order": 9,
+            "code": "BX",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90080013",
+            "label": "plochy rekreace - hromadná",
+            "field": "category",
+            "order": 10,
+            "code": "RH",
+            "color": "#ffc80f",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90080023",
+            "label": "plochy rekreace - hromadná",
+            "field": "category",
+            "order": 11,
+            "code": "RH",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90090013",
+            "label": "plochy rekreace - individuální",
+            "field": "category",
+            "order": 12,
+            "code": "RI",
+            "color": "#ffe600",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90090023",
+            "label": "plochy rekreace - individuální",
+            "field": "category",
+            "order": 13,
+            "code": "RI",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90100013",
+            "label": "plochy rekreace - zahrádkářské osady",
+            "field": "category",
+            "order": 14,
+            "code": "RZ",
+            "color": "#ebe90f",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90100023",
+            "label": "plochy rekreace - zahrádkářské osady",
+            "field": "category",
+            "order": 15,
+            "code": "RZ",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90140013",
+            "label": "plochy občanského vybavení - veřejné vybavení",
+            "field": "category",
+            "order": 16,
+            "code": "OV",
+            "color": "#dc508c",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90140023",
+            "label": "plochy občanského vybavení - veřejné vybavení",
+            "field": "category",
+            "order": 17,
+            "code": "OV",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90210013",
+            "label": "plochy občanského vybavení - veřejná pohřebiště",
+            "field": "category",
+            "order": 18,
+            "code": "OH",
+            "color": "#cdc396",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90210023",
+            "label": "plochy občanského vybavení - veřejná pohřebiště",
+            "field": "category",
+            "order": 19,
+            "code": "OH",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90220013",
+            "label": "plochy občanského vybavení - komerční zařízení - nákupní centra",
+            "field": "category",
+            "order": 20,
+            "code": "OK",
+            "color": "#d2286e",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90220023",
+            "label": "plochy občanského vybavení - komerční zařízení - nákupní centra",
+            "field": "category",
+            "order": 21,
+            "code": "OK",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90280013",
+            "label": "plochy občanského vybavení - lázeňství",
+            "field": "category",
+            "order": 22,
+            "code": "OL",
+            "color": "#dc96b6",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90280023",
+            "label": "plochy občanského vybavení - lázeňství",
+            "field": "category",
+            "order": 23,
+            "code": "OL",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90290013",
+            "label": "plochy občanského vybavení - tělovýchova a sport",
+            "field": "category",
+            "order": 24,
+            "code": "OS",
+            "color": "#ffff7d",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90290023",
+            "label": "plochy občanského vybavení - tělovýchova a sport",
+            "field": "category",
+            "order": 25,
+            "code": "OS",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90290033",
+            "label": "plocha občanského vybavení - tělovýchova a sport - rezerva",
+            "field": "category",
+            "order": 26,
+            "code": "OS",
+            "color": "#000000",
+            "fillOpacity": 0,
+            "outlineColor": "#ffff7d",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "reserve",
+            "pattern": {
+              "type": "dots",
+              "size": 16,
+              "spacing": 8,
+              "radius": 1.6,
+              "backgroundOpacity": 0.1,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90300013",
+            "label": "plochy občanského vybavení specifických forem",
+            "field": "category",
+            "order": 27,
+            "code": "OX",
+            "color": "#d24678",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90320013",
+            "label": "doprava silniční - stav",
+            "field": "category",
+            "order": 28,
+            "code": "DS",
+            "color": "#ffdcaf",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90320023",
+            "label": "doprava silniční - návrh",
+            "field": "category",
+            "order": 29,
+            "code": "DS",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90320033",
+            "label": "doprava silniční - rezerva",
+            "field": "category",
+            "order": 30,
+            "code": "DS",
+            "color": "#000000",
+            "fillOpacity": 0,
+            "outlineColor": "#ffdcaf",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "reserve",
+            "pattern": {
+              "type": "dots",
+              "size": 16,
+              "spacing": 8,
+              "radius": 1.6,
+              "backgroundOpacity": 0.1,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90330013",
+            "label": "plochy dopravní infrastruktury - drážní doprava",
+            "field": "category",
+            "order": 31,
+            "code": "DD",
+            "color": "#b969af",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90330023",
+            "label": "plochy dopravní infrastruktury - drážní doprava",
+            "field": "category",
+            "order": 32,
+            "code": "DD",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90340013",
+            "label": "plochy dopravní infrastruktury - letecká doprava",
+            "field": "category",
+            "order": 33,
+            "code": "DL",
+            "color": "#f7ebff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90370023",
+            "label": "plochy dopravní infrastruktury specifické",
+            "field": "category",
+            "order": 34,
+            "code": "DX",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90380013",
+            "label": "plochy technické infrastruktury",
+            "field": "category",
+            "order": 35,
+            "code": "TU",
+            "color": "#d2bcd4",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90380023",
+            "label": "plochy technické infrastruktury",
+            "field": "category",
+            "order": 36,
+            "code": "TU",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSVertical",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90430013",
+            "label": "plochy technické infrastruktury - nakládání s odpady",
+            "field": "category",
+            "order": 37,
+            "code": "TO",
+            "color": "#d2bcd4",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90430023",
+            "label": "plochy technické infrastruktury - nakládání s odpady",
+            "field": "category",
+            "order": 38,
+            "code": "TO",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90450013",
+            "label": "plochy veřejných prostranství",
+            "field": "category",
+            "order": 39,
+            "code": "PU",
+            "color": "#faf5eb",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90450023",
+            "label": "plochy veřejných prostranství",
+            "field": "category",
+            "order": 40,
+            "code": "PU",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSVertical",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90450033",
+            "label": "plochy veřejných prostranství - rezerva",
+            "field": "category",
+            "order": 41,
+            "code": "PU",
+            "color": "#000000",
+            "fillOpacity": 0,
+            "outlineColor": "#faf5eb",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "reserve",
+            "pattern": {
+              "type": "dots",
+              "size": 16,
+              "spacing": 8,
+              "radius": 1.6,
+              "backgroundOpacity": 0.1,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90480013",
+            "label": "plochy smíšené obytné",
+            "field": "category",
+            "order": 42,
+            "code": "SU",
+            "color": "#d86f82",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90480023",
+            "label": "plochy smíšené obytné",
+            "field": "category",
+            "order": 43,
+            "code": "SU",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSVertical",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90480033",
+            "label": "plochy smíšené obytné - rezerva",
+            "field": "category",
+            "order": 44,
+            "code": "SU",
+            "color": "#000000",
+            "fillOpacity": 0,
+            "outlineColor": "#d86f82",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "reserve",
+            "pattern": {
+              "type": "dots",
+              "size": 16,
+              "spacing": 8,
+              "radius": 1.6,
+              "backgroundOpacity": 0.1,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90490013",
+            "label": "plochy smíšené obytné v centrální zóně - městské centrum",
+            "field": "category",
+            "order": 45,
+            "code": "SC",
+            "color": "#b4646e",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90490023",
+            "label": "plochy smíšené obytné v centrální zóně - městské centrum",
+            "field": "category",
+            "order": 46,
+            "code": "SC",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90500013",
+            "label": "plochy smíšené obytné městské - lokální centrum",
+            "field": "category",
+            "order": 47,
+            "code": "SM",
+            "color": "#c88c96",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90500023",
+            "label": "plochy smíšené obytné městské - lokální centrum",
+            "field": "category",
+            "order": 48,
+            "code": "SM",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90530013",
+            "label": "plochy smíšené výrobní",
+            "field": "category",
+            "order": 49,
+            "code": "HU",
+            "color": "#a0a0b9",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90530023",
+            "label": "plochy smíšené výrobní",
+            "field": "category",
+            "order": 50,
+            "code": "HU",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSVertical",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90550013",
+            "label": "plochy specifické jiné",
+            "field": "category",
+            "order": 51,
+            "code": "XX",
+            "color": "#7d91c3",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90550023",
+            "label": "plochy specifické jiné návrh",
+            "field": "category",
+            "order": 52,
+            "code": "XX",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90570013",
+            "label": "plochy výroby a skladování",
+            "field": "category",
+            "order": 53,
+            "code": "VU",
+            "color": "#6f6f6f",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90600013",
+            "label": "plochy pro zemědělskou a lesnickou výrobu - zahradnictví",
+            "field": "category",
+            "order": 54,
+            "code": "VZ",
+            "color": "#beb991",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90600023",
+            "label": "plochy pro zemědělskou a lesnickou výrobu - zahradnictví",
+            "field": "category",
+            "order": 55,
+            "code": "VZ",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90640013",
+            "label": "plochy vodní",
+            "field": "category",
+            "order": 56,
+            "code": "WT",
+            "color": "#6bebff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90640023",
+            "label": "plochy vodní",
+            "field": "category",
+            "order": 57,
+            "code": "WT",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90660013",
+            "label": "zeleň sídelní ostatní",
+            "field": "category",
+            "order": 58,
+            "code": "ZS",
+            "color": "#87bb55",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90660023",
+            "label": "zeleň sídelní ostatní",
+            "field": "category",
+            "order": 59,
+            "code": "ZS",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSCross",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90710013",
+            "label": "plochy krajinné zeleně",
+            "field": "category",
+            "order": 60,
+            "code": "ZK",
+            "color": "#82aa00",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90710023",
+            "label": "plochy krajinné zeleně",
+            "field": "category",
+            "order": 61,
+            "code": "ZK",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSVertical",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90710033",
+            "label": "plochy krajinné zeleně - rezerva",
+            "field": "category",
+            "order": 62,
+            "code": "ZK",
+            "color": "#000000",
+            "fillOpacity": 0,
+            "outlineColor": "#82aa00",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "reserve",
+            "pattern": {
+              "type": "dots",
+              "size": 16,
+              "spacing": 8,
+              "radius": 1.6,
+              "backgroundOpacity": 0.1,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90730013",
+            "label": "plochy přírodní",
+            "field": "category",
+            "order": 63,
+            "code": "NU",
+            "color": "#a0d2a0",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90730023",
+            "label": "plochy přírodní",
+            "field": "category",
+            "order": 64,
+            "code": "NU",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSVertical",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90750013",
+            "label": "plochy zemědělské",
+            "field": "category",
+            "order": 65,
+            "code": "AU",
+            "color": "#fff9c6",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90760013",
+            "label": "plochy zemědělské specifické",
+            "field": "category",
+            "order": 66,
+            "code": "AX",
+            "color": "#fff0aa",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90770013",
+            "label": "plochy lesní",
+            "field": "category",
+            "order": 67,
+            "code": "LU",
+            "color": "#6ab085",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90770023",
+            "label": "plochy lesní",
+            "field": "category",
+            "order": 68,
+            "code": "LU",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSVertical",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90830013",
+            "label": "plochy smíšené nezastavěného území",
+            "field": "category",
+            "order": 69,
+            "code": "MU",
+            "color": "#e5ffb2",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          },
+          {
+            "value": "90830023",
+            "label": "plochy smíšené nezastavěného území",
+            "field": "category",
+            "order": 70,
+            "code": "MU",
+            "color": "#ffffff",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSVertical",
+            "status": "proposal",
+            "pattern": {
+              "type": "diagonal",
+              "size": 16,
+              "spacing": 8,
+              "lineWidth": 1.6,
+              "backgroundOpacity": 0.2,
+              "foregroundOpacity": 0.95
+            }
+          },
+          {
+            "value": "90880013",
+            "label": "plochy těžby nerostů",
+            "field": "category",
+            "order": 71,
+            "code": "GU",
+            "color": "#a17b4d",
+            "fillOpacity": 1,
+            "outlineColor": "#000000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.5,
+            "style": "esriSFSSolid",
+            "status": "current",
+            "pattern": {
+              "type": "solid",
+              "size": 16,
+              "backgroundOpacity": 0.78,
+              "foregroundOpacity": 1
+            }
+          }
+        ]
+      },
+      "attribution": "Statutární město Zlín · pilotní interní podklad",
+      "statusNote": "Stav používá plnou výplň, návrh diagonální šrafu a rezerva puntíkovaný vzor. Pilotní interní podklad ověřte proti závazné dokumentaci.",
+      "sourceMinZoom": 10,
+      "sourceMaxZoom": 16,
+      "displayMinZoom": 10,
+      "displayMaxZoom": 24,
+      "subgroup": "urban-plan",
+      "detail": {
+        "template": "261012_change6_details_v10/261012_{bucket}.json",
+        "fields": [
+          {
+            "key": "functionName",
+            "label": "Název PRZV",
+            "format": "text",
+            "section": "names",
+            "empty": "show",
+            "order": 0
+          },
+          {
+            "key": "location",
+            "label": "Lokalizace",
+            "format": "text",
+            "section": "names",
+            "empty": "show",
+            "order": 1
+          },
+          {
+            "key": "cadastralArea",
+            "label": "Katastrální území",
+            "format": "text",
+            "section": "names",
+            "empty": "show",
+            "order": 2
+          },
+          {
+            "key": "label",
+            "label": "Označení",
+            "format": "text",
+            "section": "names",
+            "empty": "show",
+            "order": 3
+          },
+          {
+            "key": "functionCode",
+            "label": "Kód PRZV",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 4
+          },
+          {
+            "key": "areaNumber",
+            "label": "Číslo plochy",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 5
+          },
+          {
+            "key": "fpId",
+            "label": "ID regulativu (FP_ID)",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 6
+          },
+          {
+            "key": "transformationCode",
+            "label": "Kód transformační plochy",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 7
+          },
+          {
+            "key": "studyCode",
+            "label": "Kód územní studie",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 8
+          },
+          {
+            "key": "category",
+            "label": "Kategorie rendereru",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 9
+          },
+          {
+            "key": "identifier",
+            "label": "Identifikace",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 10
+          },
+          {
+            "key": "areaStatus",
+            "label": "Stav plochy",
+            "format": "text",
+            "section": "content",
+            "empty": "show",
+            "order": 11
+          },
+          {
+            "key": "designationType",
+            "label": "Typ vymezení",
+            "format": "text",
+            "section": "content",
+            "empty": "show",
+            "order": 12
+          },
+          {
+            "key": "useMethod",
+            "label": "Způsob využití",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 13
+          },
+          {
+            "key": "mainUse",
+            "label": "Hlavní využití",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 14
+          },
+          {
+            "key": "permittedUse",
+            "label": "Přípustné využití",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 15
+          },
+          {
+            "key": "conditionallyPermittedUse",
+            "label": "Podmíněně přípustné využití",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 16
+          },
+          {
+            "key": "prohibitedUse",
+            "label": "Nepřípustné využití",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 17
+          },
+          {
+            "key": "additionalConditions",
+            "label": "Doplňující podmínky",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 18
+          },
+          {
+            "key": "regulationAvailable",
+            "label": "Individuální regulativ",
+            "format": "text",
+            "section": "content",
+            "empty": "show",
+            "order": 19
+          },
+          {
+            "key": "heightLimits",
+            "label": "Výšková regulace – odvozeno z textu",
+            "format": "list",
+            "section": "content",
+            "empty": "show",
+            "order": 20
+          },
+          {
+            "key": "greenCoefficient",
+            "label": "Koeficient zeleně – odvozeno z textu",
+            "format": "decimal:2",
+            "section": "content",
+            "empty": "show",
+            "order": 21
+          },
+          {
+            "key": "oneHouseCondition",
+            "label": "Podmínka jednoho RD – odvozeno z textu",
+            "format": "text",
+            "section": "content",
+            "empty": "show",
+            "order": 22
+          },
+          {
+            "key": "derivedNote",
+            "label": "Poznámka k odvozeným údajům",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 23
+          },
+          {
+            "key": "status",
+            "label": "Stav změny č. 6",
+            "format": "text",
+            "section": "content",
+            "empty": "show",
+            "order": 24
+          },
+          {
+            "key": "description",
+            "label": "Popis",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 25
+          },
+          {
+            "key": "sourceSection",
+            "label": "Kapitola textové části",
+            "format": "text",
+            "section": "source",
+            "empty": "show",
+            "order": 26
+          },
+          {
+            "key": "sourcePage",
+            "label": "Stránka PDF",
+            "format": "integer",
+            "section": "source",
+            "empty": "show",
+            "order": 27
+          },
+          {
+            "key": "sourceUrl",
+            "label": "Oficiální zdroj",
+            "format": "link",
+            "section": "source",
+            "empty": "show",
+            "order": 28
+          },
+          {
+            "key": "featureId",
+            "label": "ID prvku GIS",
+            "format": "integer",
+            "section": "technical",
+            "empty": "show",
+            "order": 29
+          },
+          {
+            "key": "entityId",
+            "label": "ID kategorie rendereru",
+            "format": "text",
+            "section": "technical",
+            "empty": "show",
+            "order": 30
+          },
+          {
+            "key": "areaKey",
+            "label": "Interní klíč plochy",
+            "format": "text",
+            "section": "technical",
+            "empty": "show",
+            "order": 31
+          }
+        ],
+        "summary": {
+          "title": [
+            "functionName",
+            "label",
+            "developmentType",
+            "studyType",
+            "type",
+            "category"
+          ],
+          "codes": [
+            "functionCode",
+            "areaNumber",
+            "fpId",
+            "studyCode",
+            "identifier"
+          ],
+          "technical": [
+            "featureId"
+          ]
+        }
+      },
+      "filters": [
+        {
+          "id": "function",
+          "label": "Funkce PRZV",
+          "type": "categories",
+          "selection": "multiple",
+          "field": "code",
+          "items": [
+            {
+              "value": "AU",
+              "label": "Zemědělské všeobecné - AU",
+              "field": "code",
+              "order": 0,
+              "color": "#fff9c6",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "AX",
+              "label": "Zemědělské jiné - AX",
+              "field": "code",
+              "order": 1,
+              "color": "#fff0aa",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "BH",
+              "label": "Bydlení hromadné - BH",
+              "field": "code",
+              "order": 2,
+              "color": "#e01616",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "BI",
+              "label": "Bydlení individuální - BI",
+              "field": "code",
+              "order": 3,
+              "color": "#ff6400",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "BU",
+              "label": "Bydlení všeobecné - BU",
+              "field": "code",
+              "order": 4,
+              "color": "#ff3200",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "BX",
+              "label": "Bydlení jiné - BX",
+              "field": "code",
+              "order": 5,
+              "color": "#ff0000",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "DD",
+              "label": "Doprava drážní - DD",
+              "field": "code",
+              "order": 6,
+              "color": "#b969af",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "DL",
+              "label": "Doprava letecká – DL",
+              "field": "code",
+              "order": 7,
+              "color": "#f7ebff",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "DS",
+              "label": "Doprava silniční – DS",
+              "field": "code",
+              "order": 8,
+              "color": "#ffdcaf",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "DX",
+              "label": "Doprava jiná – DX",
+              "field": "code",
+              "order": 9,
+              "color": "#ffffff",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "GU",
+              "label": "Těžba všeobecná - GU",
+              "field": "code",
+              "order": 10,
+              "color": "#a17b4d",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "HU",
+              "label": "Smíšené výrobní všeobecné - HU",
+              "field": "code",
+              "order": 11,
+              "color": "#a0a0b9",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "LU",
+              "label": "Lesní všeobecné - LU",
+              "field": "code",
+              "order": 12,
+              "color": "#6ab085",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "MU",
+              "label": "Smíšené krajinné všeobecné - MU",
+              "field": "code",
+              "order": 13,
+              "color": "#e5ffb2",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "NU",
+              "label": "Přírodní všeobecné - NU",
+              "field": "code",
+              "order": 14,
+              "color": "#a0d2a0",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "OH",
+              "label": "Občanské vybavení - hřbitovy – OH",
+              "field": "code",
+              "order": 15,
+              "color": "#cdc396",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "OK",
+              "label": "Občanské vybavení komerční – OK",
+              "field": "code",
+              "order": 16,
+              "color": "#d2286e",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "OL",
+              "label": "Občanské vybavení lázeňské – OL",
+              "field": "code",
+              "order": 17,
+              "color": "#dc96b6",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "OS",
+              "label": "Občanské vybavení - sport – OS",
+              "field": "code",
+              "order": 18,
+              "color": "#ffff7d",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "OV",
+              "label": "Občanské vybavení veřejné – OV",
+              "field": "code",
+              "order": 19,
+              "color": "#dc508c",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "OX",
+              "label": "Občanské vybavení jiné – OX",
+              "field": "code",
+              "order": 20,
+              "color": "#d24678",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "PU",
+              "label": "Veřejná prostranství všeobecná - PU",
+              "field": "code",
+              "order": 21,
+              "color": "#faf5eb",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "RH",
+              "label": "Rekreace hromadná – RH",
+              "field": "code",
+              "order": 22,
+              "color": "#ffc80f",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "RI",
+              "label": "Rekreace individuální – RI",
+              "field": "code",
+              "order": 23,
+              "color": "#ffe600",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "RZ",
+              "label": "Rekreace v zahrádkářských osadách – RZ",
+              "field": "code",
+              "order": 24,
+              "color": "#ebe90f",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "SC",
+              "label": "Smíšené obytné centrální - SC",
+              "field": "code",
+              "order": 25,
+              "color": "#b4646e",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "SM",
+              "label": "Smíšené obytné městské - SM",
+              "field": "code",
+              "order": 26,
+              "color": "#c88c96",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "SU",
+              "label": "Smíšené obytné všeobecné - SU",
+              "field": "code",
+              "order": 27,
+              "color": "#d86f82",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "TO",
+              "label": "Nakládání s odpady - TO",
+              "field": "code",
+              "order": 28,
+              "color": "#d2bcd4",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "TU",
+              "label": "Technická infrastruktura všeobecná - TU",
+              "field": "code",
+              "order": 29,
+              "color": "#d2bcd4",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "VU",
+              "label": "Výroba všeobecná - VU",
+              "field": "code",
+              "order": 30,
+              "color": "#6f6f6f",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "VZ",
+              "label": "Výroba zemědělská a lesnická – VZ",
+              "field": "code",
+              "order": 31,
+              "color": "#beb991",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "WT",
+              "label": "Vodní a vodních toků – WT",
+              "field": "code",
+              "order": 32,
+              "color": "#6bebff",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "XX",
+              "label": "Specifické jiné - XX",
+              "field": "code",
+              "order": 33,
+              "color": "#7d91c3",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "ZK",
+              "label": "Zeleň krajinná - ZK",
+              "field": "code",
+              "order": 34,
+              "color": "#82aa00",
+              "outlineColor": "#000000",
+              "selected": true
+            },
+            {
+              "value": "ZS",
+              "label": "Zeleň sídelní ostatní - ZS",
+              "field": "code",
+              "order": 35,
+              "color": "#87bb55",
+              "outlineColor": "#000000",
+              "selected": true
+            }
+          ]
+        },
+        {
+          "id": "status",
+          "label": "Stav plochy",
+          "type": "categories",
+          "selection": "multiple",
+          "field": "status",
+          "items": [
+            {
+              "value": "current",
+              "label": "Stav",
+              "color": "#668a70",
+              "outlineColor": "#294c34",
+              "pattern": {
+                "type": "solid",
+                "size": 16,
+                "backgroundOpacity": 0.78,
+                "foregroundOpacity": 1
+              },
+              "selected": true
+            },
+            {
+              "value": "proposal",
+              "label": "Návrh",
+              "color": "#668a70",
+              "outlineColor": "#294c34",
+              "pattern": {
+                "type": "diagonal",
+                "size": 16,
+                "spacing": 8,
+                "lineWidth": 1.6,
+                "backgroundOpacity": 0.2,
+                "foregroundOpacity": 0.95
+              },
+              "selected": true
+            },
+            {
+              "value": "reserve",
+              "label": "Rezerva",
+              "color": "#668a70",
+              "outlineColor": "#294c34",
+              "pattern": {
+                "type": "dots",
+                "size": 16,
+                "spacing": 8,
+                "radius": 1.6,
+                "backgroundOpacity": 0.1,
+                "foregroundOpacity": 0.95
+              },
+              "selected": true
+            }
+          ]
+        }
+      ],
+      "provenance": {
+        "sourceReference": "up-zlin-text-change6",
+        "status": "pilot-internal"
+      },
+      "patternLegend": true,
+      "documents": [
+        {
+          "label": "ÚP Zlín – úplné znění",
+          "url": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?",
+          "role": "Oficiální textová část"
+        },
+        {
+          "label": "Veřejná ArcGIS služba – funkční plochy",
+          "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/UP_zmena6_vyplne/FeatureServer/0",
+          "role": "Zdrojová datová služba"
+        }
+      ],
+      "sourceStatus": "public",
+      "sourceCheckedAt": "2026-10-12",
+      "sourceReferences": [
+        {
+          "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/UP_zmena6_vyplne/FeatureServer/0",
+          "role": "geometry-and-attributes"
+        }
+      ],
+      "renderParts": [
+        {
+          "id": "main",
+          "sourceLayer": "urban_plan_change6",
+          "geometryTypes": [
+            "polygon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vps-vpo-change6",
+      "name": "VPS a VPO",
+      "type": "vector",
+      "group": "thematic",
+      "tiles": "261012_vps_vpo_tiles_v10/{z}/{x}/261012_{y}.pbf",
+      "sourceLayer": "vps_vpo_change6",
+      "enabled": false,
+      "expanded": false,
+      "opacity": 0.78,
+      "order": 31,
+      "theme": "catalog",
+      "count": 304,
+      "legend": {
+        "field": "category",
+        "initialLimit": 8,
+        "items": [
+          {
+            "value": "96120023",
+            "label": "označení VPS/VPO",
+            "field": "category",
+            "order": 0,
+            "code": "",
+            "color": "#00c5ff",
+            "fillOpacity": 0,
+            "outlineColor": "#d28cf0",
+            "outlineOpacity": 0,
+            "outlineWidth": 1.1338582677165354,
+            "style": "esriSFSSolid",
+            "status": "reserve"
+          },
+          {
+            "value": "96140023",
+            "label": "označení u ploch VU",
+            "field": "category",
+            "order": 1,
+            "code": "",
+            "color": "#bbf6fc",
+            "fillOpacity": 0,
+            "outlineColor": "#6e6e6e",
+            "outlineOpacity": 0,
+            "outlineWidth": 0.7,
+            "style": "esriSFSSolid",
+            "status": "reserve"
+          },
+          {
+            "value": "96121023",
+            "label": "VD - VPS dopravní infrastruktury",
+            "field": "category",
+            "order": 2,
+            "code": "",
+            "color": "#ff0000",
+            "fillOpacity": 1,
+            "outlineColor": "#ff0000",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.9921259842519685,
+            "style": "esriSFSBackwardDiagonal",
+            "status": "proposal"
+          },
+          {
+            "value": "96122023",
+            "label": "VT - VPS technické infrastruktury",
+            "field": "category",
+            "order": 3,
+            "code": "",
+            "color": "#b2b2b2",
+            "fillOpacity": 1,
+            "outlineColor": "#767171",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.9921259842519685,
+            "style": "esriSFSBackwardDiagonal",
+            "status": "proposal"
+          },
+          {
+            "value": "96141023",
+            "label": "VU - VPO pro vytváření prvků ÚSES",
+            "field": "category",
+            "order": 4,
+            "code": "",
+            "color": "#6ab922",
+            "fillOpacity": 1,
+            "outlineColor": "#6ab922",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.9921259842519685,
+            "style": "esriSFSBackwardDiagonal",
+            "status": "proposal"
+          },
+          {
+            "value": "96202123",
+            "label": "VO - VPS občanské vybavení",
+            "field": "category",
+            "order": 5,
+            "code": "",
+            "color": "#e600a9",
+            "fillOpacity": 1,
+            "outlineColor": "#e600a9",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.9921259842519685,
+            "style": "esriSFSBackwardDiagonal",
+            "status": "proposal"
+          },
+          {
+            "value": "96202423",
+            "label": "VPS/VPO ke snižování nebezpečí v území",
+            "field": "category",
+            "order": 6,
+            "code": "",
+            "color": "#a900e6",
+            "fillOpacity": 1,
+            "outlineColor": "#a900e6",
+            "outlineOpacity": 1,
+            "outlineWidth": 0.9921259842519685,
+            "style": "esriSFSBackwardDiagonal",
+            "status": "proposal"
+          }
+        ]
+      },
+      "attribution": "Statutární město Zlín · pilotní interní podklad",
+      "statusNote": "Z publikovaného derivátu bylo odstraněno 290 přesných duplicit geometrií.",
+      "sourceMinZoom": 10,
+      "sourceMaxZoom": 16,
+      "displayMinZoom": 10,
+      "displayMaxZoom": 24,
+      "subgroup": "urban-plan",
+      "detail": {
+        "template": "261012_vps_vpo_details_v10/261012_{bucket}.json",
+        "fields": [
+          {
+            "key": "label",
+            "label": "Označení",
+            "format": "text",
+            "section": "names",
+            "empty": "show",
+            "order": 0
+          },
+          {
+            "key": "type",
+            "label": "Typ",
+            "format": "text",
+            "section": "names",
+            "empty": "show",
+            "order": 1
+          },
+          {
+            "key": "identifier",
+            "label": "Identifikace",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 2
+          },
+          {
+            "key": "areaNumber",
+            "label": "Číslo",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 3
+          },
+          {
+            "key": "description",
+            "label": "Popis",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 4
+          },
+          {
+            "key": "sourceSection",
+            "label": "Kapitola textové části",
+            "format": "text",
+            "section": "source",
+            "empty": "show",
+            "order": 5
+          },
+          {
+            "key": "sourceUrl",
+            "label": "Oficiální zdroj",
+            "format": "link",
+            "section": "source",
+            "empty": "show",
+            "order": 6
+          },
+          {
+            "key": "featureId",
+            "label": "ID prvku GIS",
+            "format": "integer",
+            "section": "technical",
+            "empty": "show",
+            "order": 7
+          },
+          {
+            "key": "entityId",
+            "label": "ID kategorie",
+            "format": "text",
+            "section": "technical",
+            "empty": "show",
+            "order": 8
+          },
+          {
+            "key": "areaKey",
+            "label": "Interní klíč",
+            "format": "text",
+            "section": "technical",
+            "empty": "show",
+            "order": 9
+          }
+        ],
+        "summary": {
+          "title": [
+            "functionName",
+            "label",
+            "developmentType",
+            "studyType",
+            "type",
+            "category"
+          ],
+          "codes": [
+            "functionCode",
+            "areaNumber",
+            "fpId",
+            "studyCode",
+            "identifier"
+          ],
+          "technical": [
+            "featureId"
+          ]
+        }
+      },
+      "filters": [
+        {
+          "id": "vps-category",
+          "label": "Kategorie VPS/VPO",
+          "type": "categories",
+          "selection": "multiple",
+          "field": "category",
+          "items": [
+            {
+              "value": "96120023",
+              "label": "označení VPS/VPO",
+              "field": "category",
+              "order": 0,
+              "code": "",
+              "color": "#00c5ff",
+              "fillOpacity": 0,
+              "outlineColor": "#d28cf0",
+              "outlineOpacity": 0,
+              "outlineWidth": 1.1338582677165354,
+              "style": "esriSFSSolid",
+              "status": "reserve",
+              "selected": true
+            },
+            {
+              "value": "96140023",
+              "label": "označení u ploch VU",
+              "field": "category",
+              "order": 1,
+              "code": "",
+              "color": "#bbf6fc",
+              "fillOpacity": 0,
+              "outlineColor": "#6e6e6e",
+              "outlineOpacity": 0,
+              "outlineWidth": 0.7,
+              "style": "esriSFSSolid",
+              "status": "reserve",
+              "selected": true
+            },
+            {
+              "value": "96121023",
+              "label": "VD - VPS dopravní infrastruktury",
+              "field": "category",
+              "order": 2,
+              "code": "",
+              "color": "#ff0000",
+              "fillOpacity": 1,
+              "outlineColor": "#ff0000",
+              "outlineOpacity": 1,
+              "outlineWidth": 0.9921259842519685,
+              "style": "esriSFSBackwardDiagonal",
+              "status": "proposal",
+              "selected": true
+            },
+            {
+              "value": "96122023",
+              "label": "VT - VPS technické infrastruktury",
+              "field": "category",
+              "order": 3,
+              "code": "",
+              "color": "#b2b2b2",
+              "fillOpacity": 1,
+              "outlineColor": "#767171",
+              "outlineOpacity": 1,
+              "outlineWidth": 0.9921259842519685,
+              "style": "esriSFSBackwardDiagonal",
+              "status": "proposal",
+              "selected": true
+            },
+            {
+              "value": "96141023",
+              "label": "VU - VPO pro vytváření prvků ÚSES",
+              "field": "category",
+              "order": 4,
+              "code": "",
+              "color": "#6ab922",
+              "fillOpacity": 1,
+              "outlineColor": "#6ab922",
+              "outlineOpacity": 1,
+              "outlineWidth": 0.9921259842519685,
+              "style": "esriSFSBackwardDiagonal",
+              "status": "proposal",
+              "selected": true
+            },
+            {
+              "value": "96202123",
+              "label": "VO - VPS občanské vybavení",
+              "field": "category",
+              "order": 5,
+              "code": "",
+              "color": "#e600a9",
+              "fillOpacity": 1,
+              "outlineColor": "#e600a9",
+              "outlineOpacity": 1,
+              "outlineWidth": 0.9921259842519685,
+              "style": "esriSFSBackwardDiagonal",
+              "status": "proposal",
+              "selected": true
+            },
+            {
+              "value": "96202423",
+              "label": "VPS/VPO ke snižování nebezpečí v území",
+              "field": "category",
+              "order": 6,
+              "code": "",
+              "color": "#a900e6",
+              "fillOpacity": 1,
+              "outlineColor": "#a900e6",
+              "outlineOpacity": 1,
+              "outlineWidth": 0.9921259842519685,
+              "style": "esriSFSBackwardDiagonal",
+              "status": "proposal",
+              "selected": true
+            }
+          ]
+        }
+      ],
+      "provenance": {
+        "sourceReference": "up-zlin-text-change6",
+        "status": "pilot-internal"
+      },
+      "documents": [
+        {
+          "label": "ÚP Zlín – úplné znění",
+          "url": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?",
+          "role": "Oficiální textová část"
+        },
+        {
+          "label": "Veřejná ArcGIS služba – VPS a VPO",
+          "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/VPS_a_VPO_zm%C4%9Bna_6/FeatureServer/0",
+          "role": "Zdrojová datová služba"
+        }
+      ],
+      "sourceStatus": "public",
+      "sourceCheckedAt": "2026-10-12",
+      "sourceReferences": [
+        {
+          "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/VPS_a_VPO_zm%C4%9Bna_6/FeatureServer/0",
+          "role": "geometry-and-attributes"
+        }
+      ],
+      "renderParts": [
+        {
+          "id": "main",
+          "sourceLayer": "vps_vpo_change6",
+          "geometryTypes": [
+            "polygon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "development-areas",
+      "name": "Rozvojové plochy",
+      "group": "thematic",
+      "subgroup": "urban-plan",
+      "type": "vector",
+      "enabled": false,
+      "expanded": false,
+      "opacity": 0.7,
+      "order": 32,
+      "tiles": "261012_development_tiles_v10/{z}/{x}/261012_{y}.pbf",
+      "sourceLayer": "development_areas",
+      "sourceMinZoom": 10,
+      "sourceMaxZoom": 16,
+      "displayMinZoom": 10,
+      "displayMaxZoom": 24,
+      "geometryTypes": [
+        "polygon"
+      ],
+      "legend": {
+        "field": "category",
+        "initialLimit": 8,
+        "items": [
+          {
+            "value": "developable",
+            "label": "Zastavitelná plocha",
+            "color": "#e58a2b"
+          },
+          {
+            "value": "transformation",
+            "label": "Transformační plocha",
+            "color": "#c6d92b"
+          },
+          {
+            "value": "landscape-change",
+            "label": "Změna v nezastavěném území",
+            "color": "#629c8b"
+          },
+          {
+            "value": "reserve",
+            "label": "Územní rezerva",
+            "color": "#776fa6"
+          }
+        ]
+      },
+      "filters": [
+        {
+          "id": "development-type",
+          "label": "Typ rozvojové plochy",
+          "type": "categories",
+          "selection": "multiple",
+          "field": "category",
+          "items": [
+            {
+              "value": "developable",
+              "label": "Zastavitelná plocha",
+              "color": "#e58a2b",
+              "selected": true
+            },
+            {
+              "value": "transformation",
+              "label": "Transformační plocha",
+              "color": "#c6d92b",
+              "selected": true
+            },
+            {
+              "value": "landscape-change",
+              "label": "Změna v nezastavěném území",
+              "color": "#629c8b",
+              "selected": true
+            },
+            {
+              "value": "reserve",
+              "label": "Územní rezerva",
+              "color": "#776fa6",
+              "selected": true
+            }
+          ]
+        }
+      ],
+      "detail": {
+        "template": "261012_development_details_v10/261012_{bucket}.json",
+        "fields": [
+          {
+            "key": "functionName",
+            "label": "Název PRZV",
+            "format": "text",
+            "section": "names",
+            "empty": "show",
+            "order": 0
+          },
+          {
+            "key": "location",
+            "label": "Lokalizace",
+            "format": "text",
+            "section": "names",
+            "empty": "show",
+            "order": 1
+          },
+          {
+            "key": "cadastralArea",
+            "label": "Katastrální území",
+            "format": "text",
+            "section": "names",
+            "empty": "show",
+            "order": 2
+          },
+          {
+            "key": "functionCode",
+            "label": "Kód PRZV",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 3
+          },
+          {
+            "key": "areaNumber",
+            "label": "Číslo plochy",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 4
+          },
+          {
+            "key": "fpId",
+            "label": "ID regulativu (FP_ID)",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 5
+          },
+          {
+            "key": "transformationCode",
+            "label": "Kód transformační plochy",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 6
+          },
+          {
+            "key": "studyCode",
+            "label": "Kód územní studie",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 7
+          },
+          {
+            "key": "areaStatus",
+            "label": "Stav plochy",
+            "format": "text",
+            "section": "content",
+            "empty": "show",
+            "order": 8
+          },
+          {
+            "key": "designationType",
+            "label": "Typ vymezení",
+            "format": "text",
+            "section": "content",
+            "empty": "show",
+            "order": 9
+          },
+          {
+            "key": "useMethod",
+            "label": "Způsob využití",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 10
+          },
+          {
+            "key": "mainUse",
+            "label": "Hlavní využití",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 11
+          },
+          {
+            "key": "permittedUse",
+            "label": "Přípustné využití",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 12
+          },
+          {
+            "key": "conditionallyPermittedUse",
+            "label": "Podmíněně přípustné využití",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 13
+          },
+          {
+            "key": "prohibitedUse",
+            "label": "Nepřípustné využití",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 14
+          },
+          {
+            "key": "additionalConditions",
+            "label": "Doplňující podmínky",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 15
+          },
+          {
+            "key": "regulationAvailable",
+            "label": "Individuální regulativ",
+            "format": "text",
+            "section": "content",
+            "empty": "show",
+            "order": 16
+          },
+          {
+            "key": "heightLimits",
+            "label": "Výšková regulace – odvozeno z textu",
+            "format": "list",
+            "section": "content",
+            "empty": "show",
+            "order": 17
+          },
+          {
+            "key": "greenCoefficient",
+            "label": "Koeficient zeleně – odvozeno z textu",
+            "format": "decimal:2",
+            "section": "content",
+            "empty": "show",
+            "order": 18
+          },
+          {
+            "key": "oneHouseCondition",
+            "label": "Podmínka jednoho RD – odvozeno z textu",
+            "format": "text",
+            "section": "content",
+            "empty": "show",
+            "order": 19
+          },
+          {
+            "key": "derivedNote",
+            "label": "Poznámka k odvozeným údajům",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 20
+          },
+          {
+            "key": "developmentType",
+            "label": "Kategorie rozvojové plochy",
+            "format": "text",
+            "section": "content",
+            "empty": "show",
+            "order": 21
+          },
+          {
+            "key": "verificationConditions",
+            "label": "Podmínky pro prověření",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 22
+          },
+          {
+            "key": "sourceSection",
+            "label": "Kapitola textové části",
+            "format": "text",
+            "section": "source",
+            "empty": "show",
+            "order": 23
+          },
+          {
+            "key": "sourcePage",
+            "label": "Stránka PDF",
+            "format": "integer",
+            "section": "source",
+            "empty": "show",
+            "order": 24
+          },
+          {
+            "key": "sourceUrl",
+            "label": "Oficiální zdroj",
+            "format": "link",
+            "section": "source",
+            "empty": "show",
+            "order": 25
+          },
+          {
+            "key": "featureId",
+            "label": "ID prvku GIS",
+            "format": "integer",
+            "section": "technical",
+            "empty": "show",
+            "order": 26
+          },
+          {
+            "key": "entityId",
+            "label": "ID kategorie rendereru",
+            "format": "text",
+            "section": "technical",
+            "empty": "show",
+            "order": 27
+          },
+          {
+            "key": "areaKey",
+            "label": "Interní klíč plochy",
+            "format": "text",
+            "section": "technical",
+            "empty": "show",
+            "order": 28
+          }
+        ],
+        "summary": {
+          "title": [
+            "functionName",
+            "label",
+            "developmentType",
+            "studyType",
+            "type",
+            "category"
+          ],
+          "codes": [
+            "functionCode",
+            "areaNumber",
+            "fpId",
+            "studyCode",
+            "identifier"
+          ],
+          "technical": [
+            "featureId"
+          ]
+        }
+      },
+      "attribution": "Statutární město Zlín · pilotní interní interpretace ÚP",
+      "statusNote": "Pilotní interní podklad. Ověřte proti závazné dokumentaci.",
+      "provenance": {
+        "sourceReference": "up-zlin-text-change6",
+        "status": "pilot-internal"
+      },
+      "documents": [
+        {
+          "label": "ÚP Zlín – úplné znění",
+          "url": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?",
+          "role": "Autoritativní text a odvozená klasifikace"
+        }
+      ],
+      "sourceStatus": "public",
+      "sourceCheckedAt": "2026-10-12",
+      "sourceReferences": [
+        {
+          "url": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?",
+          "role": "authoritative-document"
+        }
+      ],
+      "renderParts": [
+        {
+          "id": "main",
+          "sourceLayer": "development_areas",
+          "geometryTypes": [
+            "polygon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urban-studies",
+      "name": "Plochy územních studií",
+      "group": "thematic",
+      "subgroup": "urban-plan",
+      "type": "vector",
+      "enabled": false,
+      "expanded": false,
+      "opacity": 0.7,
+      "order": 33,
+      "tiles": "261012_studies_tiles_v10/{z}/{x}/261012_{y}.pbf",
+      "sourceLayer": "urban_studies",
+      "sourceMinZoom": 10,
+      "sourceMaxZoom": 16,
+      "displayMinZoom": 10,
+      "displayMaxZoom": 24,
+      "geometryTypes": [
+        "polygon"
+      ],
+      "legend": {
+        "field": "category",
+        "initialLimit": 8,
+        "items": [
+          {
+            "value": "required-study",
+            "label": "Povinná územní studie",
+            "color": "#e58a2b"
+          },
+          {
+            "value": "reserve-study",
+            "label": "Studie rezervní plochy",
+            "color": "#776fa6"
+          }
+        ]
+      },
+      "filters": [
+        {
+          "id": "study-type",
+          "label": "Typ studie",
+          "type": "categories",
+          "selection": "multiple",
+          "field": "category",
+          "items": [
+            {
+              "value": "required-study",
+              "label": "Povinná územní studie",
+              "color": "#e58a2b",
+              "selected": true
+            },
+            {
+              "value": "reserve-study",
+              "label": "Studie rezervní plochy",
+              "color": "#776fa6",
+              "selected": true
+            }
+          ]
+        }
+      ],
+      "detail": {
+        "template": "261012_studies_details_v10/261012_{bucket}.json",
+        "fields": [
+          {
+            "key": "functionName",
+            "label": "Název PRZV",
+            "format": "text",
+            "section": "names",
+            "empty": "show",
+            "order": 0
+          },
+          {
+            "key": "location",
+            "label": "Lokalizace",
+            "format": "text",
+            "section": "names",
+            "empty": "show",
+            "order": 1
+          },
+          {
+            "key": "cadastralArea",
+            "label": "Katastrální území",
+            "format": "text",
+            "section": "names",
+            "empty": "show",
+            "order": 2
+          },
+          {
+            "key": "functionCode",
+            "label": "Kód PRZV",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 3
+          },
+          {
+            "key": "areaNumber",
+            "label": "Číslo plochy",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 4
+          },
+          {
+            "key": "fpId",
+            "label": "ID regulativu (FP_ID)",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 5
+          },
+          {
+            "key": "transformationCode",
+            "label": "Kód transformační plochy",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 6
+          },
+          {
+            "key": "studyCode",
+            "label": "Kód územní studie",
+            "format": "text",
+            "section": "codes",
+            "empty": "show",
+            "order": 7
+          },
+          {
+            "key": "areaStatus",
+            "label": "Stav plochy",
+            "format": "text",
+            "section": "content",
+            "empty": "show",
+            "order": 8
+          },
+          {
+            "key": "designationType",
+            "label": "Typ vymezení",
+            "format": "text",
+            "section": "content",
+            "empty": "show",
+            "order": 9
+          },
+          {
+            "key": "useMethod",
+            "label": "Způsob využití",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 10
+          },
+          {
+            "key": "mainUse",
+            "label": "Hlavní využití",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 11
+          },
+          {
+            "key": "permittedUse",
+            "label": "Přípustné využití",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 12
+          },
+          {
+            "key": "conditionallyPermittedUse",
+            "label": "Podmíněně přípustné využití",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 13
+          },
+          {
+            "key": "prohibitedUse",
+            "label": "Nepřípustné využití",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 14
+          },
+          {
+            "key": "additionalConditions",
+            "label": "Doplňující podmínky",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 15
+          },
+          {
+            "key": "regulationAvailable",
+            "label": "Individuální regulativ",
+            "format": "text",
+            "section": "content",
+            "empty": "show",
+            "order": 16
+          },
+          {
+            "key": "heightLimits",
+            "label": "Výšková regulace – odvozeno z textu",
+            "format": "list",
+            "section": "content",
+            "empty": "show",
+            "order": 17
+          },
+          {
+            "key": "greenCoefficient",
+            "label": "Koeficient zeleně – odvozeno z textu",
+            "format": "decimal:2",
+            "section": "content",
+            "empty": "show",
+            "order": 18
+          },
+          {
+            "key": "oneHouseCondition",
+            "label": "Podmínka jednoho RD – odvozeno z textu",
+            "format": "text",
+            "section": "content",
+            "empty": "show",
+            "order": 19
+          },
+          {
+            "key": "derivedNote",
+            "label": "Poznámka k odvozeným údajům",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 20
+          },
+          {
+            "key": "studyType",
+            "label": "Typ studie",
+            "format": "text",
+            "section": "content",
+            "empty": "show",
+            "order": 21
+          },
+          {
+            "key": "studyConditions",
+            "label": "Podmínky pořízení studie",
+            "format": "multiline",
+            "section": "content",
+            "empty": "show",
+            "order": 22
+          },
+          {
+            "key": "sourceSection",
+            "label": "Kapitola textové části",
+            "format": "text",
+            "section": "source",
+            "empty": "show",
+            "order": 23
+          },
+          {
+            "key": "sourcePage",
+            "label": "Stránka PDF",
+            "format": "integer",
+            "section": "source",
+            "empty": "show",
+            "order": 24
+          },
+          {
+            "key": "sourceUrl",
+            "label": "Oficiální zdroj",
+            "format": "link",
+            "section": "source",
+            "empty": "show",
+            "order": 25
+          },
+          {
+            "key": "featureId",
+            "label": "ID prvku GIS",
+            "format": "integer",
+            "section": "technical",
+            "empty": "show",
+            "order": 26
+          },
+          {
+            "key": "entityId",
+            "label": "ID kategorie rendereru",
+            "format": "text",
+            "section": "technical",
+            "empty": "show",
+            "order": 27
+          },
+          {
+            "key": "areaKey",
+            "label": "Interní klíč plochy",
+            "format": "text",
+            "section": "technical",
+            "empty": "show",
+            "order": 28
+          }
+        ],
+        "summary": {
+          "title": [
+            "functionName",
+            "label",
+            "developmentType",
+            "studyType",
+            "type",
+            "category"
+          ],
+          "codes": [
+            "functionCode",
+            "areaNumber",
+            "fpId",
+            "studyCode",
+            "identifier"
+          ],
+          "technical": [
+            "featureId"
+          ]
+        }
+      },
+      "attribution": "Statutární město Zlín · pilotní interní interpretace ÚP",
+      "statusNote": "Pilotní interní podklad. Ověřte proti závazné dokumentaci.",
+      "provenance": {
+        "sourceReference": "up-zlin-text-change6",
+        "status": "pilot-internal"
+      },
+      "documents": [
+        {
+          "label": "ÚP Zlín – úplné znění",
+          "url": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?",
+          "role": "Autoritativní text a odvozená klasifikace"
+        }
+      ],
+      "sourceStatus": "public",
+      "sourceCheckedAt": "2026-10-12",
+      "sourceReferences": [
+        {
+          "url": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?",
+          "role": "authoritative-document"
+        }
+      ],
+      "renderParts": [
+        {
+          "id": "main",
+          "sourceLayer": "urban_studies",
+          "geometryTypes": [
+            "polygon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "osm",
+      "name": "OpenStreetMap",
+      "type": "raster-tile",
+      "group": "basemap",
+      "tiles": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      "enabled": true,
+      "expanded": false,
+      "opacity": 1,
+      "order": 0,
+      "attribution": "© OpenStreetMap contributors",
+      "statusNote": "Výchozí veřejný podklad pro interaktivní pilot.",
+      "sourceMinZoom": 0,
+      "sourceMaxZoom": 19,
+      "displayMinZoom": 0,
+      "displayMaxZoom": 24,
+      "documents": [
+        {
+          "label": "OpenStreetMap – autorská práva a licence",
+          "url": "https://www.openstreetmap.org/copyright",
+          "role": "Podmínky užití"
+        }
+      ],
+      "sourceStatus": "public",
+      "sourceCheckedAt": "2026-10-12",
+      "sourceReferences": [
+        {
+          "url": "https://www.openstreetmap.org/copyright",
+          "role": "Podmínky užití"
+        }
+      ]
+    },
+    {
+      "id": "ortho",
+      "name": "Ortofoto ČÚZK",
+      "type": "wms-tile",
+      "group": "basemap",
+      "service": "https://ags.cuzk.gov.cz/arcgis1/services/ORTOFOTO/MapServer/WMSServer",
+      "layer": "0",
+      "format": "image/jpeg",
+      "transparent": false,
+      "enabled": false,
+      "expanded": false,
+      "opacity": 1,
+      "order": 1,
+      "attribution": "© ČÚZK",
+      "statusNote": "Aktuální ortofoto; historické ročníky jsou dostupné po rozbalení.",
+      "controls": {
+        "ortho": {
+          "mode": "current",
+          "archiveService": "https://geoportal.cuzk.gov.cz/WMS_ORTOFOTO_ARCHIV/WMService.aspx",
+          "year": 2022,
+          "coverageYears": [
+            1999,
+            2003,
+            2006,
+            2009,
+            2012,
+            2014,
+            2016,
+            2018,
+            2020,
+            2022
+          ],
+          "years": [
+            1998,
+            1999,
+            2000,
+            2001,
+            2002,
+            2003,
+            2004,
+            2005,
+            2006,
+            2007,
+            2008,
+            2009,
+            2010,
+            2011,
+            2012,
+            2013,
+            2014,
+            2015,
+            2016,
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023
+          ],
+          "showAllYears": false
+        }
+      },
+      "sourceMinZoom": 10,
+      "sourceMaxZoom": 20,
+      "displayMinZoom": 10,
+      "displayMaxZoom": 24,
+      "documents": [
+        {
+          "label": "ČÚZK – aktuální ortofoto",
+          "url": "https://ags.cuzk.gov.cz/arcgis1/services/ORTOFOTO/MapServer/WMSServer?service=WMS&request=GetCapabilities",
+          "role": "Capabilities služby"
+        },
+        {
+          "label": "ČÚZK – archivní ortofoto",
+          "url": "https://geoportal.cuzk.gov.cz/WMS_ORTOFOTO_ARCHIV/WMService.aspx?service=WMS&request=GetCapabilities",
+          "role": "Capabilities archivní služby"
+        }
+      ],
+      "sourceStatus": "public",
+      "sourceCheckedAt": "2026-10-12",
+      "sourceReferences": [
+        {
+          "url": "https://ags.cuzk.gov.cz/arcgis1/services/ORTOFOTO/MapServer/WMSServer?service=WMS&request=GetCapabilities",
+          "role": "Capabilities služby"
+        },
+        {
+          "url": "https://geoportal.cuzk.gov.cz/WMS_ORTOFOTO_ARCHIV/WMService.aspx?service=WMS&request=GetCapabilities",
+          "role": "Capabilities archivní služby"
+        }
+      ]
+    },
+    {
+      "id": "cadastre",
+      "name": "Katastrální mapa ČÚZK",
+      "type": "wms-tile",
+      "service": "https://services.cuzk.gov.cz/wms/local-km-wms.asp",
+      "layer": "KN",
+      "format": "image/png",
+      "transparent": true,
+      "visible": false,
+      "opacity": 0.82,
+      "attribution": "© ČÚZK",
+      "note": "Oficiální WMS katastrální mapy. Data se zobrazují od zoomu 17.",
+      "group": "basemap",
+      "enabled": false,
+      "expanded": false,
+      "order": 2,
+      "legend": {
+        "initialLimit": 8
+      },
+      "sourceMinZoom": 17,
+      "sourceMaxZoom": 24,
+      "displayMinZoom": 17,
+      "displayMaxZoom": 24,
+      "documents": [
+        {
+          "label": "ČÚZK – WMS katastrální mapa",
+          "url": "https://services.cuzk.gov.cz/wms/local-km-wms.asp?service=WMS&request=GetCapabilities",
+          "role": "Popis a capabilities služby"
+        }
+      ],
+      "sourceStatus": "public",
+      "sourceCheckedAt": "2026-10-12",
+      "sourceReferences": [
+        {
+          "url": "https://services.cuzk.gov.cz/wms/local-km-wms.asp?service=WMS&request=GetCapabilities",
+          "role": "Popis a capabilities služby"
+        }
+      ]
+    }
+  ],
+  "emptyLabel": "Neuvedeno ve zdroji",
+  "sourceReferences": [
+    {
+      "id": "up-zlin-text-change6",
+      "title": "ÚP Zlín – úplné znění po vydání změny č. 6",
+      "url": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?",
+      "role": "Textová autorita pro kapitoly, tabulky a regulativy"
+    }
+  ],
+  "provenance": {
+    "status": "pilot-internal",
+    "generatedAt": "2026-10-12T16:53:55.988Z",
+    "sourcePriority": [
+      "official-text",
+      "current-standardized-gis",
+      "verified-legacy-crosswalk"
+    ],
+    "warning": "Prohlížečka je interpretační a kontrolní pomůcka; nenahrazuje závaznou dokumentaci."
+  },
+  "typologies": [
+    {
+      "id": "up-functions",
+      "label": "Funkce PRZV",
+      "items": [
+        {
+          "value": "AU",
+          "label": "Zemědělské všeobecné - AU",
+          "field": "code",
+          "order": 0,
+          "color": "#fff9c6",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "AX",
+          "label": "Zemědělské jiné - AX",
+          "field": "code",
+          "order": 1,
+          "color": "#fff0aa",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "BH",
+          "label": "Bydlení hromadné - BH",
+          "field": "code",
+          "order": 2,
+          "color": "#e01616",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "BI",
+          "label": "Bydlení individuální - BI",
+          "field": "code",
+          "order": 3,
+          "color": "#ff6400",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "BU",
+          "label": "Bydlení všeobecné - BU",
+          "field": "code",
+          "order": 4,
+          "color": "#ff3200",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "BX",
+          "label": "Bydlení jiné - BX",
+          "field": "code",
+          "order": 5,
+          "color": "#ff0000",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "DD",
+          "label": "Doprava drážní - DD",
+          "field": "code",
+          "order": 6,
+          "color": "#b969af",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "DL",
+          "label": "Doprava letecká – DL",
+          "field": "code",
+          "order": 7,
+          "color": "#f7ebff",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "DS",
+          "label": "Doprava silniční – DS",
+          "field": "code",
+          "order": 8,
+          "color": "#ffdcaf",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "DX",
+          "label": "Doprava jiná – DX",
+          "field": "code",
+          "order": 9,
+          "color": "#ffffff",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "GU",
+          "label": "Těžba všeobecná - GU",
+          "field": "code",
+          "order": 10,
+          "color": "#a17b4d",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "HU",
+          "label": "Smíšené výrobní všeobecné - HU",
+          "field": "code",
+          "order": 11,
+          "color": "#a0a0b9",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "LU",
+          "label": "Lesní všeobecné - LU",
+          "field": "code",
+          "order": 12,
+          "color": "#6ab085",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "MU",
+          "label": "Smíšené krajinné všeobecné - MU",
+          "field": "code",
+          "order": 13,
+          "color": "#e5ffb2",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "NU",
+          "label": "Přírodní všeobecné - NU",
+          "field": "code",
+          "order": 14,
+          "color": "#a0d2a0",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "OH",
+          "label": "Občanské vybavení - hřbitovy – OH",
+          "field": "code",
+          "order": 15,
+          "color": "#cdc396",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "OK",
+          "label": "Občanské vybavení komerční – OK",
+          "field": "code",
+          "order": 16,
+          "color": "#d2286e",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "OL",
+          "label": "Občanské vybavení lázeňské – OL",
+          "field": "code",
+          "order": 17,
+          "color": "#dc96b6",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "OS",
+          "label": "Občanské vybavení - sport – OS",
+          "field": "code",
+          "order": 18,
+          "color": "#ffff7d",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "OV",
+          "label": "Občanské vybavení veřejné – OV",
+          "field": "code",
+          "order": 19,
+          "color": "#dc508c",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "OX",
+          "label": "Občanské vybavení jiné – OX",
+          "field": "code",
+          "order": 20,
+          "color": "#d24678",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "PU",
+          "label": "Veřejná prostranství všeobecná - PU",
+          "field": "code",
+          "order": 21,
+          "color": "#faf5eb",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "RH",
+          "label": "Rekreace hromadná – RH",
+          "field": "code",
+          "order": 22,
+          "color": "#ffc80f",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "RI",
+          "label": "Rekreace individuální – RI",
+          "field": "code",
+          "order": 23,
+          "color": "#ffe600",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "RZ",
+          "label": "Rekreace v zahrádkářských osadách – RZ",
+          "field": "code",
+          "order": 24,
+          "color": "#ebe90f",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "SC",
+          "label": "Smíšené obytné centrální - SC",
+          "field": "code",
+          "order": 25,
+          "color": "#b4646e",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "SM",
+          "label": "Smíšené obytné městské - SM",
+          "field": "code",
+          "order": 26,
+          "color": "#c88c96",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "SU",
+          "label": "Smíšené obytné všeobecné - SU",
+          "field": "code",
+          "order": 27,
+          "color": "#d86f82",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "TO",
+          "label": "Nakládání s odpady - TO",
+          "field": "code",
+          "order": 28,
+          "color": "#d2bcd4",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "TU",
+          "label": "Technická infrastruktura všeobecná - TU",
+          "field": "code",
+          "order": 29,
+          "color": "#d2bcd4",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "VU",
+          "label": "Výroba všeobecná - VU",
+          "field": "code",
+          "order": 30,
+          "color": "#6f6f6f",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "VZ",
+          "label": "Výroba zemědělská a lesnická – VZ",
+          "field": "code",
+          "order": 31,
+          "color": "#beb991",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "WT",
+          "label": "Vodní a vodních toků – WT",
+          "field": "code",
+          "order": 32,
+          "color": "#6bebff",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "XX",
+          "label": "Specifické jiné - XX",
+          "field": "code",
+          "order": 33,
+          "color": "#7d91c3",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "ZK",
+          "label": "Zeleň krajinná - ZK",
+          "field": "code",
+          "order": 34,
+          "color": "#82aa00",
+          "outlineColor": "#000000"
+        },
+        {
+          "value": "ZS",
+          "label": "Zeleň sídelní ostatní - ZS",
+          "field": "code",
+          "order": 35,
+          "color": "#87bb55",
+          "outlineColor": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "change6-categories",
+      "label": "Kategorie změny č. 6",
+      "items": [
+        {
+          "value": "90020013",
+          "label": "plochy bydlení",
+          "field": "category",
+          "order": 0,
+          "code": "BU",
+          "color": "#ff3200",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90020023",
+          "label": "plochy bydlení",
+          "field": "category",
+          "order": 1,
+          "code": "BU",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90030013",
+          "label": "plochy bydlení hromadného",
+          "field": "category",
+          "order": 2,
+          "code": "BH",
+          "color": "#e01616",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90030023",
+          "label": "plochy bydlení hromadného",
+          "field": "category",
+          "order": 3,
+          "code": "BH",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90030033",
+          "label": "plochy bydlení hromadné - rezerva",
+          "field": "category",
+          "order": 4,
+          "code": "BH",
+          "color": "#000000",
+          "fillOpacity": 0,
+          "outlineColor": "#e01616",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "reserve"
+        },
+        {
+          "value": "90040013",
+          "label": "plochy bydlení individuálního",
+          "field": "category",
+          "order": 5,
+          "code": "BI",
+          "color": "#ff6400",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90040023",
+          "label": "plochy bydlení individuálního",
+          "field": "category",
+          "order": 6,
+          "code": "BI",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90040033",
+          "label": "plochy bydlení individuální - rezerva",
+          "field": "category",
+          "order": 7,
+          "code": "BI",
+          "color": "#000000",
+          "fillOpacity": 0,
+          "outlineColor": "#ff6400",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "reserve"
+        },
+        {
+          "value": "90050013",
+          "label": "plochy bydlení specifických forem",
+          "field": "category",
+          "order": 8,
+          "code": "BX",
+          "color": "#ff0000",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90050023",
+          "label": "plochy bydlení specifických forem",
+          "field": "category",
+          "order": 9,
+          "code": "BX",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90080013",
+          "label": "plochy rekreace - hromadná",
+          "field": "category",
+          "order": 10,
+          "code": "RH",
+          "color": "#ffc80f",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90080023",
+          "label": "plochy rekreace - hromadná",
+          "field": "category",
+          "order": 11,
+          "code": "RH",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90090013",
+          "label": "plochy rekreace - individuální",
+          "field": "category",
+          "order": 12,
+          "code": "RI",
+          "color": "#ffe600",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90090023",
+          "label": "plochy rekreace - individuální",
+          "field": "category",
+          "order": 13,
+          "code": "RI",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90100013",
+          "label": "plochy rekreace - zahrádkářské osady",
+          "field": "category",
+          "order": 14,
+          "code": "RZ",
+          "color": "#ebe90f",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90100023",
+          "label": "plochy rekreace - zahrádkářské osady",
+          "field": "category",
+          "order": 15,
+          "code": "RZ",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90140013",
+          "label": "plochy občanského vybavení - veřejné vybavení",
+          "field": "category",
+          "order": 16,
+          "code": "OV",
+          "color": "#dc508c",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90140023",
+          "label": "plochy občanského vybavení - veřejné vybavení",
+          "field": "category",
+          "order": 17,
+          "code": "OV",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90210013",
+          "label": "plochy občanského vybavení - veřejná pohřebiště",
+          "field": "category",
+          "order": 18,
+          "code": "OH",
+          "color": "#cdc396",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90210023",
+          "label": "plochy občanského vybavení - veřejná pohřebiště",
+          "field": "category",
+          "order": 19,
+          "code": "OH",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90220013",
+          "label": "plochy občanského vybavení - komerční zařízení - nákupní centra",
+          "field": "category",
+          "order": 20,
+          "code": "OK",
+          "color": "#d2286e",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90220023",
+          "label": "plochy občanského vybavení - komerční zařízení - nákupní centra",
+          "field": "category",
+          "order": 21,
+          "code": "OK",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90280013",
+          "label": "plochy občanského vybavení - lázeňství",
+          "field": "category",
+          "order": 22,
+          "code": "OL",
+          "color": "#dc96b6",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90280023",
+          "label": "plochy občanského vybavení - lázeňství",
+          "field": "category",
+          "order": 23,
+          "code": "OL",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90290013",
+          "label": "plochy občanského vybavení - tělovýchova a sport",
+          "field": "category",
+          "order": 24,
+          "code": "OS",
+          "color": "#ffff7d",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90290023",
+          "label": "plochy občanského vybavení - tělovýchova a sport",
+          "field": "category",
+          "order": 25,
+          "code": "OS",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90290033",
+          "label": "plocha občanského vybavení - tělovýchova a sport - rezerva",
+          "field": "category",
+          "order": 26,
+          "code": "OS",
+          "color": "#000000",
+          "fillOpacity": 0,
+          "outlineColor": "#ffff7d",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "reserve"
+        },
+        {
+          "value": "90300013",
+          "label": "plochy občanského vybavení specifických forem",
+          "field": "category",
+          "order": 27,
+          "code": "OX",
+          "color": "#d24678",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90320013",
+          "label": "doprava silniční - stav",
+          "field": "category",
+          "order": 28,
+          "code": "DS",
+          "color": "#ffdcaf",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90320023",
+          "label": "doprava silniční - návrh",
+          "field": "category",
+          "order": 29,
+          "code": "DS",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90320033",
+          "label": "doprava silniční - rezerva",
+          "field": "category",
+          "order": 30,
+          "code": "DS",
+          "color": "#000000",
+          "fillOpacity": 0,
+          "outlineColor": "#ffdcaf",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "reserve"
+        },
+        {
+          "value": "90330013",
+          "label": "plochy dopravní infrastruktury - drážní doprava",
+          "field": "category",
+          "order": 31,
+          "code": "DD",
+          "color": "#b969af",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90330023",
+          "label": "plochy dopravní infrastruktury - drážní doprava",
+          "field": "category",
+          "order": 32,
+          "code": "DD",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90340013",
+          "label": "plochy dopravní infrastruktury - letecká doprava",
+          "field": "category",
+          "order": 33,
+          "code": "DL",
+          "color": "#f7ebff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90370023",
+          "label": "plochy dopravní infrastruktury specifické",
+          "field": "category",
+          "order": 34,
+          "code": "DX",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90380013",
+          "label": "plochy technické infrastruktury",
+          "field": "category",
+          "order": 35,
+          "code": "TU",
+          "color": "#d2bcd4",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90380023",
+          "label": "plochy technické infrastruktury",
+          "field": "category",
+          "order": 36,
+          "code": "TU",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSVertical",
+          "status": "proposal"
+        },
+        {
+          "value": "90430013",
+          "label": "plochy technické infrastruktury - nakládání s odpady",
+          "field": "category",
+          "order": 37,
+          "code": "TO",
+          "color": "#d2bcd4",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90430023",
+          "label": "plochy technické infrastruktury - nakládání s odpady",
+          "field": "category",
+          "order": 38,
+          "code": "TO",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90450013",
+          "label": "plochy veřejných prostranství",
+          "field": "category",
+          "order": 39,
+          "code": "PU",
+          "color": "#faf5eb",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90450023",
+          "label": "plochy veřejných prostranství",
+          "field": "category",
+          "order": 40,
+          "code": "PU",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSVertical",
+          "status": "proposal"
+        },
+        {
+          "value": "90450033",
+          "label": "plochy veřejných prostranství - rezerva",
+          "field": "category",
+          "order": 41,
+          "code": "PU",
+          "color": "#000000",
+          "fillOpacity": 0,
+          "outlineColor": "#faf5eb",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "reserve"
+        },
+        {
+          "value": "90480013",
+          "label": "plochy smíšené obytné",
+          "field": "category",
+          "order": 42,
+          "code": "SU",
+          "color": "#d86f82",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90480023",
+          "label": "plochy smíšené obytné",
+          "field": "category",
+          "order": 43,
+          "code": "SU",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSVertical",
+          "status": "proposal"
+        },
+        {
+          "value": "90480033",
+          "label": "plochy smíšené obytné - rezerva",
+          "field": "category",
+          "order": 44,
+          "code": "SU",
+          "color": "#000000",
+          "fillOpacity": 0,
+          "outlineColor": "#d86f82",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "reserve"
+        },
+        {
+          "value": "90490013",
+          "label": "plochy smíšené obytné v centrální zóně - městské centrum",
+          "field": "category",
+          "order": 45,
+          "code": "SC",
+          "color": "#b4646e",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90490023",
+          "label": "plochy smíšené obytné v centrální zóně - městské centrum",
+          "field": "category",
+          "order": 46,
+          "code": "SC",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90500013",
+          "label": "plochy smíšené obytné městské - lokální centrum",
+          "field": "category",
+          "order": 47,
+          "code": "SM",
+          "color": "#c88c96",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90500023",
+          "label": "plochy smíšené obytné městské - lokální centrum",
+          "field": "category",
+          "order": 48,
+          "code": "SM",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90530013",
+          "label": "plochy smíšené výrobní",
+          "field": "category",
+          "order": 49,
+          "code": "HU",
+          "color": "#a0a0b9",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90530023",
+          "label": "plochy smíšené výrobní",
+          "field": "category",
+          "order": 50,
+          "code": "HU",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSVertical",
+          "status": "proposal"
+        },
+        {
+          "value": "90550013",
+          "label": "plochy specifické jiné",
+          "field": "category",
+          "order": 51,
+          "code": "XX",
+          "color": "#7d91c3",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90550023",
+          "label": "plochy specifické jiné návrh",
+          "field": "category",
+          "order": 52,
+          "code": "XX",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90570013",
+          "label": "plochy výroby a skladování",
+          "field": "category",
+          "order": 53,
+          "code": "VU",
+          "color": "#6f6f6f",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90600013",
+          "label": "plochy pro zemědělskou a lesnickou výrobu - zahradnictví",
+          "field": "category",
+          "order": 54,
+          "code": "VZ",
+          "color": "#beb991",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90600023",
+          "label": "plochy pro zemědělskou a lesnickou výrobu - zahradnictví",
+          "field": "category",
+          "order": 55,
+          "code": "VZ",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90640013",
+          "label": "plochy vodní",
+          "field": "category",
+          "order": 56,
+          "code": "WT",
+          "color": "#6bebff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90640023",
+          "label": "plochy vodní",
+          "field": "category",
+          "order": 57,
+          "code": "WT",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90660013",
+          "label": "zeleň sídelní ostatní",
+          "field": "category",
+          "order": 58,
+          "code": "ZS",
+          "color": "#87bb55",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90660023",
+          "label": "zeleň sídelní ostatní",
+          "field": "category",
+          "order": 59,
+          "code": "ZS",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSCross",
+          "status": "proposal"
+        },
+        {
+          "value": "90710013",
+          "label": "plochy krajinné zeleně",
+          "field": "category",
+          "order": 60,
+          "code": "ZK",
+          "color": "#82aa00",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90710023",
+          "label": "plochy krajinné zeleně",
+          "field": "category",
+          "order": 61,
+          "code": "ZK",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSVertical",
+          "status": "proposal"
+        },
+        {
+          "value": "90710033",
+          "label": "plochy krajinné zeleně - rezerva",
+          "field": "category",
+          "order": 62,
+          "code": "ZK",
+          "color": "#000000",
+          "fillOpacity": 0,
+          "outlineColor": "#82aa00",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "reserve"
+        },
+        {
+          "value": "90730013",
+          "label": "plochy přírodní",
+          "field": "category",
+          "order": 63,
+          "code": "NU",
+          "color": "#a0d2a0",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90730023",
+          "label": "plochy přírodní",
+          "field": "category",
+          "order": 64,
+          "code": "NU",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSVertical",
+          "status": "proposal"
+        },
+        {
+          "value": "90750013",
+          "label": "plochy zemědělské",
+          "field": "category",
+          "order": 65,
+          "code": "AU",
+          "color": "#fff9c6",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90760013",
+          "label": "plochy zemědělské specifické",
+          "field": "category",
+          "order": 66,
+          "code": "AX",
+          "color": "#fff0aa",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90770013",
+          "label": "plochy lesní",
+          "field": "category",
+          "order": 67,
+          "code": "LU",
+          "color": "#6ab085",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90770023",
+          "label": "plochy lesní",
+          "field": "category",
+          "order": 68,
+          "code": "LU",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSVertical",
+          "status": "proposal"
+        },
+        {
+          "value": "90830013",
+          "label": "plochy smíšené nezastavěného území",
+          "field": "category",
+          "order": 69,
+          "code": "MU",
+          "color": "#e5ffb2",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        },
+        {
+          "value": "90830023",
+          "label": "plochy smíšené nezastavěného území",
+          "field": "category",
+          "order": 70,
+          "code": "MU",
+          "color": "#ffffff",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSVertical",
+          "status": "proposal"
+        },
+        {
+          "value": "90880013",
+          "label": "plochy těžby nerostů",
+          "field": "category",
+          "order": 71,
+          "code": "GU",
+          "color": "#a17b4d",
+          "fillOpacity": 1,
+          "outlineColor": "#000000",
+          "outlineOpacity": 1,
+          "outlineWidth": 0.5,
+          "style": "esriSFSSolid",
+          "status": "current"
+        }
+      ]
+    },
+    {
+      "id": "development-types",
+      "label": "Druhy rozvojových ploch",
+      "items": [
+        {
+          "value": "developable",
+          "label": "Zastavitelná plocha",
+          "color": "#e58a2b"
+        },
+        {
+          "value": "transformation",
+          "label": "Transformační plocha",
+          "color": "#c6d92b"
+        },
+        {
+          "value": "landscape-change",
+          "label": "Změna v nezastavěném území",
+          "color": "#629c8b"
+        },
+        {
+          "value": "reserve",
+          "label": "Územní rezerva",
+          "color": "#776fa6"
+        }
+      ]
+    },
+    {
+      "id": "study-types",
+      "label": "Druhy územních studií",
+      "items": [
+        {
+          "value": "required-study",
+          "label": "Povinná územní studie",
+          "color": "#e58a2b"
+        },
+        {
+          "value": "reserve-study",
+          "label": "Studie rezervní plochy",
+          "color": "#776fa6"
+        }
+      ]
+    }
+  ],
+  "detailSections": [
+    {
+      "id": "names",
+      "label": "Název a umístění"
+    },
+    {
+      "id": "codes",
+      "label": "Kódy v dokumentaci"
+    },
+    {
+      "id": "content",
+      "label": "Popis a regulace"
+    },
+    {
+      "id": "source",
+      "label": "Veřejný zdroj"
+    },
+    {
+      "id": "technical",
+      "label": "Technické údaje"
+    }
+  ],
+  "symbolPatterns": {
+    "solid": {
+      "type": "solid",
+      "size": 16,
+      "backgroundOpacity": 0.78,
+      "foregroundOpacity": 1
+    },
+    "diagonal": {
+      "type": "diagonal",
+      "size": 16,
+      "spacing": 8,
+      "lineWidth": 1.6,
+      "backgroundOpacity": 0.2,
+      "foregroundOpacity": 0.95
+    },
+    "dots": {
+      "type": "dots",
+      "size": 16,
+      "spacing": 8,
+      "radius": 1.6,
+      "backgroundOpacity": 0.1,
+      "foregroundOpacity": 0.95
+    }
+  }
+}

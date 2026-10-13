@@ -1,0 +1,33 @@
+{
+  "1458": {
+    "areaNumber": "276",
+    "fpId": "298_276",
+    "featureId": 1458,
+    "entityId": "90290033",
+    "areaKey": "urban-studies:261012:1458",
+    "cadastralArea": "Kostelec u Zlína",
+    "functionCode": "OS",
+    "functionName": "Občanské vybavení - sport – OS",
+    "areaStatus": "3",
+    "designationType": "PLOCHY REZERV",
+    "location": "severně od silnice do Kostelce",
+    "useMethod": "využití území pro sport",
+    "mainUse": "tělovýchova a sport",
+    "permittedUse": "pozemky související dopravní a technické infrastruktury\npozemky veřejných prostranství\npozemky sídelní zeleně\npozemky střelnic a souvisejících služeb\npozemky staveb a zařízení související s provozem kynologického cvičiště a souvisejících služeb\nprotipovodňová a protierozní opatření",
+    "conditionallyPermittedUse": "pozemky staveb a zařízení, které tvoří doplňkovou funkci např. ubytování, stravování, služby, obchodní prodej za podmínky, že hlavní funkci tvoří sportovní využití\nbydlení za podmínky že se jedná o byt správce nebo majitele zařízení",
+    "prohibitedUse": "činnosti, které nesouvisí s hlavním využitím a které narušují kvalitu prostředí vlivy provozu a dopravní zátěží nebo takové důsledky vyvolávají druhotně",
+    "additionalConditions": "zachovat dopravní a funkční návaznost na stávající plochu fotbalového hřiště v ulici Lázeňské respektovat přírodní hodnoty a krajinný ráz území                                                      v uspořádání území využít konfigurace terénu",
+    "transformationCode": "",
+    "studyCode": "RUS2",
+    "sourceSection": "I) Plochy podmíněné zpracováním územní studie",
+    "sourcePage": 101,
+    "sourceUrl": "https://zlin.eu/file/6a61b5c6951c7505de0f99d6?#page=101",
+    "regulationAvailable": "Ano",
+    "heightLimits": [],
+    "greenCoefficient": "",
+    "oneHouseCondition": "",
+    "derivedNote": "",
+    "studyType": "Studie rezervní plochy",
+    "studyConditions": ""
+  }
+}

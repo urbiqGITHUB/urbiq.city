@@ -1,0 +1,23 @@
+{
+  "1": {
+    "name": "Podchod - náměstí Práce",
+    "projectNumber": "1",
+    "year": "2023",
+    "status": "Projekt v přípravě",
+    "kamRole": "Projektový management",
+    "projectType": "Neuvedeno",
+    "description": "",
+    "attachments": [
+      {
+        "label": "01_Podchod_náměstí práce_01.jpg",
+        "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/Projekty_KAM/FeatureServer/0/1/attachments/3"
+      },
+      {
+        "label": "01_Podchod_náměstí práce_02.jpg",
+        "url": "https://services-eu1.arcgis.com/yNltvVkIFFzMClFD/ArcGIS/rest/services/Projekty_KAM/FeatureServer/0/1/attachments/4"
+      }
+    ],
+    "sourceFeatureId": "1",
+    "featureId": 1
+  }
+}

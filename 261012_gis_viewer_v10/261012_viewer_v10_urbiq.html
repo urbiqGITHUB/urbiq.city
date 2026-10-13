@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="application-name" content="urbiq mapy">
+  <meta name="description" content="Prostorové vrstvy a územní plán Zlína – pilotní mapový viewer urbiq.">
+  <title>urbiq · Prostorové vrstvy Zlína</title>
+  <link rel="stylesheet" href="261007_maplibre_v5.6.2.css">
+  <link rel="stylesheet" href="261012_viewer_v10.css">
+  <script defer src="261007_maplibre_v5.6.2.js"></script>
+  <script defer src="261012_viewer_v10.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#map">Přeskočit na mapu</a>
+  <aside aria-label="Ovládání mapy a vrstev">
+    <header>
+      <div class="headerRow">
+        <div class="brandLogo" aria-label="urbiq"><img src="https://raw.githubusercontent.com/urbiqGITHUB/urbiq.city/main/urbiq_positiv_registered.svg" alt="urbiq" width="160" height="43"></div>
+        <div class="headerActions">
+          <span class="pill">PILOT 10</span>
+          <button id="settingsToggle" class="settingsButton" type="button" aria-expanded="false" aria-controls="settings">Nastavení</button>
+        </div>
+      </div>
+      <section id="settings" hidden aria-label="Pokročilé nastavení zdroje dat">
+        <h2>Pokročilé nastavení</h2>
+        <label for="catalogUrl">URL katalogu JSON</label>
+        <input id="catalogUrl" type="url" spellcheck="false" autocomplete="off">
+        <button id="loadCatalog" type="button">Načíst katalog</button>
+        <p>Vývojové přepínání katalogu.</p>
+      </section>
+    </header>
+    <p class="eyebrow">Městská data · Zlín</p>
+    <h1>Prostorové vrstvy</h1>
+    <p class="intro">Město v datech a čase. Vrstvu rozbalte pro výběr kategorií a nastavení krytí.</p>
+    <div id="layers" aria-label="Mapové vrstvy"></div>
+    <footer>
+      <strong id="summary">Načítání…</strong>
+      <p>Vektorové dlaždice · detail až po kliknutí</p>
+      <p id="quality"></p>
+      <p id="status" role="status"></p>
+    </footer>
+  </aside>
+  <main id="map-area" aria-label="Mapové zobrazení">
+    <div id="map" aria-label="Mapa prostorových vrstev" tabindex="-1"></div>
+    <div class="mapTitle"><span class="dot" aria-hidden="true"></span><span>ZLÍN / PROSTOROVÁ DATA</span><button id="extent" type="button" title="Zobrazit celé území" aria-label="Zobrazit celé území"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg></button></div>
+    <div class="mapInfo" id="mapInfo">Načítání…</div>
+    <div id="fatal" role="alert" hidden></div>
+  </main>
+</body>
+</html>
+
